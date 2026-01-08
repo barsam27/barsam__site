@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="style.css">
   <style>
     /* تنظیم اندازه فونت‌ها برای موبایل */
+    html, body {
+      height: 100%; /* تنظیم ارتفاع کامل */
+      margin: 0;
+      padding: 0;
+      overflow: auto; /* فعال کردن اسکرول */
+      font-family: Arial, sans-serif;
+    }
+
     * {
       font-size: 20px; /* اندازه فونت بزرگتر */
       margin: 0;
@@ -15,7 +23,6 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
       padding: 20px;
     }
 
@@ -42,6 +49,46 @@
         padding: 10px;
       }
     }
+
+    /* استایل برای دکمه‌های خرید */
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* استایل برای کارت محصول */
+    .product-card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    /* استایل برای فوتر */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 18px;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+
+    /* استایل برای تصاویر */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
@@ -59,8 +106,8 @@
 </div>
 
 <div class="product-card">
-  <h2>قیمت لحضه ای طلا و دلار</h2>
-  <p>سرویس کامل قیمت لحضه طلا و دلار</p>
+  <h2>قیمت لحظه ای طلا و دلار</h2>
+  <p>سرویس کامل قیمت لحظه طلا و دلار</p>
   <p>قیمت: 50,000 تومان</p>
   <a href="contact.html">
     <button>👉خرید و دریافت👈</button>
@@ -81,18 +128,17 @@
   <p>♥️ممنون که سایت مارا انتخاب کردید♥️</p>
 </footer>
 
-  <footer>
+<footer>
   <h1>barsam_shabestani.python</h1>
   <p>♥️کانال اینستاگرام barsam.shabestani.python♥️</p>
-  <footer>
+</footer>
 
-    <footer>
+<footer>
   <h1>barsam_shabestani.python</h1>
   <p>♥️کانال برنامه نویسی payhon--programmer♥️</p>
-    </footer>
+</footer>
 
 <h1 class="glitch">متن هکری</h1>
 
 </body>
 </html>
-
