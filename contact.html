@@ -2,16 +2,53 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- برای نمایش درست در موبایل -->
   <title>خرید محصول</title>
+  <style>
+    /* استایل‌های عمومی برای فونت و طراحی */
+    body {
+      text-align: center;
+      font-family: Tahoma, sans-serif;
+      background-color: #f2f2f2;
+      padding: 50px;
+      font-size: 20px; /* فونت بزرگتر برای دستگاه‌های عادی */
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    /* استایل دکمه واتساپ */
+    a {
+      display: inline-block;
+      padding: 15px 25px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+
+    /* استایل ریسپانسیو برای موبایل */
+    @media (max-width: 768px) {
+      body {
+        font-size: 18px; /* فونت برای موبایل */
+        padding: 30px; /* کاهش فضای اضافی در موبایل */
+      }
+      a {
+        font-size: 16px; /* دکمه واتساپ در موبایل کمی کوچکتر */
+      }
+    }
+  </style>
 </head>
-<body style="text-align: center; font-family: Tahoma, sans-serif; background-color: #f2f2f2; padding: 50px;">
+<body>
 
 <p>
 برای خرید و دریافت فایل، روی لینک واتساپ زیر کلیک کنید و پیام بدهید:
 </p>
 
 <!-- واتساپ -->
-<a href="https://wa.me/989306662990" target="_blank" style="display:inline-block; padding: 15px 25px; background-color:#25D366; color:white; text-decoration:none; border-radius:10px; font-size:18px;">
+<a href="https://wa.me/989306662990" target="_blank">
 📞 پیام در واتساپ
 </a>
 
@@ -20,5 +57,4 @@
 </p>
 
 </body>
-
 </html>
