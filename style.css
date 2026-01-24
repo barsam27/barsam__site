@@ -19,3 +19,9 @@ body {
     animation: glitch 1s infinite;
     text-shadow: 2px 0 red, -2px 0 blue;
 }
+body {
+  margin: 0;
+  height: 100vh;
+  background: url("bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
