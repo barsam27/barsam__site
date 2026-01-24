@@ -2,62 +2,70 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- برای نمایش درست در موبایل -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>خرید محصول</title>
+
   <style>
-    /* استایل‌های عمومی برای فونت و طراحی */
     body {
       text-align: center;
       font-family: Tahoma, sans-serif;
-      background-color: #f2f2f2;
-      padding: 50px;
-      font-size: 50px; /* فونت بزرگ */
-      line-height: 1.6;
+      background-color: #2b2b2b;
+      color: #ffffff;
+      padding: 30px;
+      font-size: 22px;
+      line-height: 1.8;
     }
 
     p {
-      margin-bottom: 30px; /* فاصله بیشتر بین پاراگراف‌ها */
+      margin-bottom: 25px;
     }
 
-    /* استایل دکمه واتساپ */
-    a {
+    /* دکمه واتساپ */
+    .whatsapp-btn {
       display: inline-block;
-      padding: 20px 30px;
+      padding: 14px 26px;
       background-color: #25D366;
       color: white;
       text-decoration: none;
-      border-radius: 15px;
-      font-size: 55px; /* فونت دکمه بزرگتر */
-      margin-top: 20px;
+      border-radius: 14px;
+      font-size: 24px;
+      margin: 20px 0;
+      transition: 0.3s;
     }
 
-    /* استایل ریسپانسیو برای موبایل */
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
+      transform: scale(1.03);
+    }
+
+    /* موبایل */
     @media (max-width: 768px) {
       body {
-        font-size: 28px; /* فونت برای موبایل کوچکتر */
-        padding: 20px; /* فضای بیشتر */
+        font-size: 18px;
+        padding: 20px;
       }
-      a {
-        font-size: 40px; /* دکمه واتساپ برای موبایل کمی کوچکتر */
-        padding: 15px 25px; /* کاهش پدینگ دکمه */
+
+      .whatsapp-btn {
+        font-size: 20px;
+        padding: 12px 22px;
       }
     }
   </style>
 </head>
+
 <body>
 
-<p>
-برای خرید و دریافت فایل، روی لینک واتساپ زیر کلیک کنید و پیام بدهید:
-</p>
+  <p>
+    برای خرید و دریافت فایل، روی دکمه واتساپ زیر کلیک کنید و پیام بدهید:
+  </p>
 
-<!-- واتساپ -->
-<a href="https://wa.me/989306662990" target="_blank">
-📞 پیام در واتساپ
-</a>
+  <a class="whatsapp-btn" href="https://wa.me/989306662990" target="_blank">
+    📞 پیام در واتساپ
+  </a>
 
-<p style="margin-top: 30px;">
-بعد از هماهنگی و پرداخت، فایل پایتون برای شما ارسال می‌شود.
-</p>
+  <p>
+    بعد از هماهنگی و پرداخت، فایل پایتون برای شما ارسال می‌شود.
+  </p>
 
 </body>
 </html>
