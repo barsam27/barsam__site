@@ -1,4 +1,5 @@
 body {
+    background-color: black;
     color: white;
     font-family: 'Courier New', Courier, monospace;
     overflow: hidden;
@@ -24,4 +25,5 @@ body {
   background: url("bg.jpg") no-repeat center center fixed;
   background-size: cover;
 }
+
 
