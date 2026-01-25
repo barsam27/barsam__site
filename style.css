@@ -26,4 +26,13 @@ body {
   background-size: cover;
 }
 
+body {
+  padding: 20px;
+  background-image: url("bg.jpg"); /* اگر تو پوشه images بود: images/bg.jpg */
+  background-size: cover;          /* کل صفحه رو بپوشونه */
+  background-position: center;     /* وسط چین */
+  background-repeat: no-repeat;    /* تکرار نشه */
+  background-attachment: fixed;    /* اسکرول که می‌کنی ثابت بمونه */
+}
+
 
