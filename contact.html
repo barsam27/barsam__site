@@ -20,34 +20,38 @@
       margin-bottom: 25px;
     }
 
-    /* دکمه واتساپ */
-    .whatsapp-btn {
-      display: inline-block;
+    .btn {
+      display: block;
+      max-width: 320px;
+      margin: 12px auto;
       padding: 14px 26px;
-      background-color: #25D366;
       color: white;
       text-decoration: none;
       border-radius: 14px;
-      font-size: 24px;
-      margin: 20px 0;
+      font-size: 22px;
       transition: 0.3s;
     }
 
-    .whatsapp-btn:hover {
-      background-color: #1ebe5d;
-      transform: scale(1.03);
+    .btn:hover {
+      transform: scale(1.04);
+      opacity: 0.9;
     }
 
-    /* موبایل */
+    .whatsapp { background-color: #25D366; }
+    .telegram { background-color: #0088cc; }
+    .eitaa { background-color: #7c3aed; }
+    .bale { background-color: #0ea5e9; }
+    .rubika { background-color: #f97316; }
+    .shad { background-color: #22c55e; }
+
     @media (max-width: 768px) {
       body {
         font-size: 18px;
         padding: 20px;
       }
 
-      .whatsapp-btn {
+      .btn {
         font-size: 20px;
-        padding: 12px 22px;
       }
     }
   </style>
@@ -56,11 +60,37 @@
 <body>
 
   <p>
-    برای خرید و دریافت فایل، روی دکمه واتساپ زیر کلیک کنید و پیام بدهید:
+    برای خرید و دریافت فایل، از یکی از پیام‌رسان‌های زیر پیام بدهید:
   </p>
 
-  <a class="whatsapp-btn" href="https://wa.me/989306662990" target="_blank">
-    📞 پیام در واتساپ
+  <!-- واتساپ -->
+  <a class="btn whatsapp" href="https://wa.me/989306662990" target="_blank">
+    📞 واتساپ
+  </a>
+
+  <!-- تلگرام -->
+  <a class="btn telegram" href="https://t.me/+989306662990" target="_blank">
+    ✈️ تلگرام
+  </a>
+
+  <!-- ایتا -->
+  <a class="btn eitaa" href="https://eitaa.com/+989306662990" target="_blank">
+    💬 ایتا
+  </a>
+
+  <!-- بله -->
+  <a class="btn bale" href="https://ble.ir/+989306662990" target="_blank">
+    🟦 بله
+  </a>
+
+  <!-- روبیکا -->
+  <a class="btn rubika" href="https://rubika.ir/+989306662990" target="_blank">
+    🔶 روبیکا
+  </a>
+
+  <!-- شاد -->
+  <a class="btn shad" href="https://shad.ir/+989306662990" target="_blank">
+    🟢 شاد
   </a>
 
   <p>
