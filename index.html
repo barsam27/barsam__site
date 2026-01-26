@@ -1,136 +1,152 @@
-<!DOCTYPE html>  <html lang="fa">  
-<head>  
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- برای نمایش درست در موبایل -->  
-  <title>barsam_shabestani.python - HELLO TO THE MY SITE</title>  
-  <link rel="stylesheet" href="style.css">  
-  <style>  
-    /* تنظیم اندازه فونت‌ها برای موبایل */  
-    html, body {  
-      height: 100%; /* تنظیم ارتفاع کامل */  
-      margin: 0;  
-      padding: 0;  
-      overflow: auto; /* فعال کردن اسکرول */  
-      font-family: Arial, sans-serif;  
-    }  * {  
-  font-size: 20px; /* اندازه فونت بزرگتر */  
-  margin: 0;  
-  padding: 0;  
-  box-sizing: border-box;  
-}  
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>barsam_shabestani.python - HELLO TO THE MY SITE</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* تنظیم اندازه فونت‌ها برای موبایل */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: auto;
+      font-family: Arial, sans-serif;
+    }
+    * {
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {  
-  padding: 20px;  
-}  
+    body {
+      padding: 20px;
+    }
 
-h1, h2, p {  
-  margin-bottom: 10px;  
-}  
+    h1, h2, p {
+      margin-bottom: 10px;
+    }
 
-/* استایل ریسپانسیو برای موبایل */  
-@media (max-width: 768px) {  
-  * {  
-    font-size: 18px; /* فونت در موبایل کمی کوچکتر */  
-  }  
-  h1 {  
-    font-size: 24px;  
-  }  
-  h2 {  
-    font-size: 22px;  
-  }  
-  p {  
-    font-size: 18px;  
-  }  
-  .product-card {  
-    font-size: 16px;  
-    padding: 10px;  
-  }  
-}  
+    /* استایل ریسپانسیو برای موبایل */
+    @media (max-width: 768px) {
+      * {
+        font-size: 18px;
+      }
+      h1 { font-size: 24px; }
+      h2 { font-size: 22px; }
+      p { font-size: 18px; }
+      .product-card { font-size: 16px; padding: 10px; }
+    }
 
-/* استایل برای دکمه‌های خرید */  
-button {  
-  background-color: #4CAF50;  
-  color: white;  
-  padding: 10px 20px;  
-  border: none;  
-  cursor: pointer;  
-  font-size: 18px;  
-}  
+    /* استایل برای دکمه‌های خرید */
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
 
-button:hover {  
-  background-color: #45a049;  
-}  
+    /* استایل برای کارت محصول */
+    .product-card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
 
-/* استایل برای کارت محصول */  
-.product-card {  
-  border: 1px solid #ddd;  
-  padding: 20px;  
-  margin-bottom: 20px;  
-  border-radius: 8px;  
-  background-color: #f9f9f9;  
-}  
+    /* استایل برای فوتر */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 18px;
+    }
+    footer p {
+      font-size: 14px;
+    }
 
-/* استایل برای فوتر */  
-footer {  
-  text-align: center;  
-  margin-top: 40px;  
-  font-size: 18px;  
-}  
+    /* استایل برای تصاویر */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>barsam_shabestani.python</h1>
+  <p>فروش کدهای پایتون</p>
 
-footer p {  
-  font-size: 14px;  
-}  
+  <div class="product-card">
+    <h2>ماشین حساب پایتون (Tkinter)</h2>
+    <p>سورس کامل ماشین حساب با رابط گرافیکی Tkinter</p>
+    <p>قیمت: 100,000 تومان</p>
+    <a href="contact.html">
+      <button>👉خرید و دریافت👈</button>
+    </a>
+  </div>
 
-/* استایل برای تصاویر */  
-img {  
-  max-width: 100%;  
-  height: auto;  
-}
+  <div class="product-card">
+    <h2>قیمت لحظه ای طلا و دلار</h2>
+    <p>سرویس کامل قیمت لحظه طلا و دلار</p>
+    <p>قیمت: 50,000 تومان</p>
+    <a href="contact.html">
+      <button>👉خرید و دریافت👈</button>
+    </a>
+  </div>
 
-  </style>  
-</head>  
-<body>  <h1>barsam_shabestani.python</h1>  
-<p>فروش کدهای پایتون</p>  <div class="product-card">  
-  <h2>ماشین حساب پایتون (Tkinter)</h2>  
-  <p>سورس کامل ماشین حساب با رابط گرافیکی Tkinter</p>  
-  <p>قیمت: 100,000 تومان</p>  
-  <a href="contact.html">  
-    <button>👉خرید و دریافت👈</button>  
-  </a>  
-</div>  <div class="product-card">  
-  <h2>قیمت لحظه ای طلا و دلار</h2>  
-  <p>سرویس کامل قیمت لحظه طلا و دلار</p>  
-  <p>قیمت: 50,000 تومان</p>  
-  <a href="contact.html">  
-    <button>👉خرید و دریافت👈</button>  
-  </a>  
-</div>  <div class="product-card">  
-  <h2>کد سنگ کاغذ قیچی</h2>  
-  <p>سرویس کامل سنگ کاغذ قیچی</p>  
-  <p>قیمت: 100,000 تومان</p>  
-  <a href="contact.html">  
-    <button>👉خرید و دریافت👈</button>  
-  </a>  
-</div>  <footer>  
-  <h1>barsam_shabestani.python</h1>  
-  <p>♥️ممنون که سایت مارا انتخاب کردید♥️</p>  
-</footer>  <footer>  
-  <h1>barsam_shabestani.python</h1>  
-  <p>  
-    ♥️کانال اینستاگرام   
-    <a href="https://www.instagram.com/barsam.shabestani.python" target="_blank">  
-      barsam.shabestani.python  
-    </a>  
-    ♥️  
-  </p>  
-</footer>  <footer>  
-  <h1>barsam_shabestani.python</h1>  
-  <p>  
-    ♥️کانال تلگرام   
-    <a href="https://t.me/pythonprogrammerpy" target="_blank">  
-      pythonprogrammerpy  
-    </a>  
-    ♥️  
-  </p>  
-</footer>  <h1 class="glitch">متن هکری</h1>  </body>  
-</html> 
+  <div class="product-card">
+    <h2>کد سنگ کاغذ قیچی</h2>
+    <p>سرویس کامل سنگ کاغذ قیچی</p>
+    <p>قیمت: 100,000 تومان</p>
+    <a href="contact.html">
+      <button>👉خرید و دریافت👈</button>
+    </a>
+  </div>
+
+  <!-- کارت جدید بازی مارپله واقعی -->
+  <div class="product-card">
+    <h2>کد بازی مارپله واقعی 🎲🐍</h2>
+    <p>سورس کامل بازی مارپله اصلی با گرافیک، صدا، دونفره و جدول رکورد</p>
+    <p>قیمت: 100,000 تومان</p>
+    <a href="contact.html">
+      <button>👉خرید و دریافت👈</button>
+    </a>
+  </div>
+
+  <footer>
+    <h1>barsam_shabestani.python</h1>
+    <p>♥️ممنون که سایت مارا انتخاب کردید♥️</p>
+  </footer>
+
+  <footer>
+    <h1>barsam_shabestani.python</h1>
+    <p>
+      ♥️کانال اینستاگرام
+      <a href="https://www.instagram.com/barsam.shabestani.python" target="_blank">
+        barsam.shabestani.python
+      </a>
+      ♥️
+    </p>
+  </footer>
+
+  <footer>
+    <h1>barsam_shabestani.python</h1>
+    <p>
+      ♥️کانال تلگرام
+      <a href="https://t.me/pythonprogrammerpy" target="_blank">
+        pythonprogrammerpy
+      </a>
+      ♥️
+    </p>
+  </footer>
+
+  <h1 class="glitch">متن هکری</h1>
+</body>
+</html>
