@@ -238,3 +238,11 @@ button:active {
   text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
+
+body {
+  padding: 20px;
+  background: url('14_05_36_medium_1fe76ae8_0227_4053_ba5f_bfb0f57ab9de.webp') no-repeat center center fixed;
+  background-size: cover;
+  color: #f2f2f2;        /* سفید روشن‌تر */
+  font-weight: 500;     /* پررنگ‌تر از حالت عادی */
+}
