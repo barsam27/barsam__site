@@ -81,11 +81,16 @@ button:hover, .btn:hover {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid white;
+  border: 2px solid #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
   z-index: 9999;
+}
+
+/* خیلی مهم: نذار قانون img عمومی روش اثر بذاره */
+img.floating-profile {
+  max-width: none;
 }
