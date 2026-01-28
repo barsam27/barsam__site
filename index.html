@@ -7,9 +7,16 @@
   <style>
     /* ---------- Reset و فونت ---------- */
     html, body { height: 100%; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-    * { box-sizing: border-box; font-size: 20px; margin: 0; padding: 0; }
 
-    body { padding: 20px; background-color: #f2f2f2; }
+    /* ---------- بک‌گراند ---------- */
+    body {
+      padding: 20px;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    * { box-sizing: border-box; font-size: 20px; margin: 0; padding: 0; }
 
     h1, h2, p { margin-bottom: 10px; }
 
@@ -39,16 +46,12 @@
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 8px;
-      background-color: #fff;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background-color: rgba(0,0,0,0.6); /* شفافیت روی بک‌گراند */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     }
 
     /* ---------- فوتر ---------- */
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 18px;
-    }
+    footer { text-align: center; margin-top: 40px; font-size: 18px; }
     footer p { font-size: 14px; }
 
     /* ---------- عکس شناور ---------- */
@@ -71,17 +74,15 @@
       max-width: 400px;
       padding: 20px;
       border-radius: 15px;
-      background: #111;
+      background: rgba(17,17,17,0.8);
       box-shadow: 0 0 15px rgba(0,0,0,0.6);
       text-align: center;
     }
-
     .social-box h2 {
       color: #fff;
       margin-bottom: 15px;
       font-size: 22px;
     }
-
     .social-links a {
       display: block;
       margin: 10px 0;
@@ -92,12 +93,10 @@
       color: white;
       transition: 0.3s;
     }
-
     .social-links a.instagram {
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366);
     }
     .social-links a.instagram:hover { transform: scale(1.05); }
-
     .social-links a.telegram {
       background: #0088cc;
     }
@@ -116,54 +115,96 @@
 </head>
 <body>
 
+<h1>barsam_shabestani.python</h1>
+<p>فروش کدهای پایتون</p>
+
+<!-- کارت محصولات -->
+<div class="product-card">
+  <h2>ماشین حساب پایتون (Tkinter)</h2>
+  <p>سورس کامل ماشین حساب با رابط گرافیکی Tkinter</p>
+  <p>قیمت: 100,000 تومان</p>
+  <a href="contact.html"><button>👉خرید و دریافت👈</button></a>
+</div>
+
+<div class="product-card">
+  <h2>کد سنگ کاغذ قیچی</h2>
+  <p>سرویس کامل سنگ کاغذ قیچی</p>
+  <p>قیمت: 100,000 تومان</p>
+  <a href="contact.html"><button>👉خرید و دریافت👈</button></a>
+</div>
+
+<div class="product-card">
+  <h2>کد بازی مارپله واقعی 🎲🐍</h2>
+  <p>سورس کامل بازی مارپله اصلی با گرافیک، صدا، دونفره و جدول رکورد</p>
+  <p>قیمت: 100,000 تومان</p>
+  <a href="contact.html"><button>👉خرید و دریافت👈</button></a>
+</div>
+
+<div class="product-card">
+  <h2>قیمت لحظه ای طلا و دلار</h2>
+  <p>سرویس کامل قیمت لحظه طلا و دلار</p>
+  <p>قیمت: 50,000 تومان</p>
+  <a href="contact.html"><button>👉خرید و دریافت👈</button></a>
+</div>
+
+<div class="product-card">
+  <h2>سرویس پیش‌بینی آب و هوا 🌤️</h2>
+  <p>کد حرفه‌ای پایتون برای مشاهده آب و هوای شهر</p>
+  <p>قیمت: 50,000 تومان</p>
+  <a href="contact.html"><button>👉خرید و دریافت👈</button></a>
+</div>
+
+<div class="product-card">
+  <h2>چت‌بات ساده 🤖</h2>
+  <p>چت‌بات فارسی با رابط گرافیکی شیک</p>
+  <p>قیمت: 50,000 تومان</p>
+  <a href="contact.html"><button>👉خرید و دریافت👈</button></a>
+</div>
+
+<div class="product-card">
+  <h2>ساعت و تاریخ گرافیکی 🕒</h2>
+  <p>نمایش ساعت و تاریخ با رابط گرافیکی</p>
+  <p>قیمت: 50,000 تومان</p>
+  <a href="contact.html"><button>👉خرید و دریافت👈</button></a>
+</div>
+
+<div class="product-card">
+  <h2>بازی حدس عدد 🎲</h2>
+  <p>حدس عدد از 1 تا 100</p>
+  <p>قیمت: 20,000 تومان</p>
+  <a href="contact.html"><button>👉خرید و دریافت👈</button></a>
+</div>
+
+<div class="product-card">
+  <h2>چراغ قوه / تغییر رنگ 💡</h2>
+  <p>تغییر رنگ پس‌زمینه</p>
+  <p>قیمت: 20,000 تومان</p>
+  <a href="contact.html"><button>👉خرید و دریافت👈</button></a>
+</div>
+
+<!-- باکس اجتماعی -->
+<div class="social-box">
+  <h2>ارتباط با ما</h2>
+  <div class="social-links">
+    <a class="instagram" href="https://www.instagram.com/barsam.shabestani.python" target="_blank">
+      📸 Instagram<br>barsam.shabestani.python
+    </a>
+    <a class="telegram" href="https://t.me/pythonprogrammerpy" target="_blank">
+      ✈️ Telegram<br>pythonprogrammerpy
+    </a>
+  </div>
+</div>
+
+<h1 class="glitch">متن هکری</h1>
+
+<!-- عکس پروفایل شناور -->
+<img src="InShot_20260125_113638831.jpg" class="floating-profile">
+
+<!-- فوتر -->
+<footer>
   <h1>barsam_shabestani.python</h1>
-  <p>فروش کدهای پایتون</p>
-
-  <!-- محصولات -->
-  <div class="product-card">
-    <h2>ماشین حساب پایتون (Tkinter)</h2>
-    <p>سورس کامل ماشین حساب با رابط گرافیکی Tkinter</p>
-    <p>قیمت: 100,000 تومان</p>
-    <a href="contact.html"><button>👉خرید و دریافت👈</button></a>
-  </div>
-
-  <div class="product-card">
-    <h2>کد سنگ کاغذ قیچی</h2>
-    <p>سرویس کامل سنگ کاغذ قیچی</p>
-    <p>قیمت: 100,000 تومان</p>
-    <a href="contact.html"><button>👉خرید و دریافت👈</button></a>
-  </div>
-
-  <div class="product-card">
-    <h2>کد بازی مارپله واقعی 🎲🐍</h2>
-    <p>سورس کامل بازی مارپله اصلی با گرافیک، صدا، دونفره و جدول رکورد</p>
-    <p>قیمت: 100,000 تومان</p>
-    <a href="contact.html"><button>👉خرید و دریافت👈</button></a>
-  </div>
-
-  <!-- اضافه کردن باکس اجتماعی -->
-  <div class="social-box">
-    <h2>ارتباط با ما</h2>
-    <div class="social-links">
-      <a class="instagram" href="https://www.instagram.com/barsam.shabestani.python" target="_blank">
-        📸 Instagram<br>barsam.shabestani.python
-      </a>
-      <a class="telegram" href="https://t.me/pythonprogrammerpy" target="_blank">
-        ✈️ Telegram<br>pythonprogrammerpy
-      </a>
-    </div>
-  </div>
-
-  <h1 class="glitch">متن هکری</h1>
-
-  <!-- عکس پروفایل شناور -->
-  <img src="InShot_20260125_113638831.jpg" class="floating-profile">
-
-  <!-- فوتر -->
-  <footer>
-    <h1>barsam_shabestani.python</h1>
-    <p>♥️ممنون که سایت مارا انتخاب کردید♥️</p>
-  </footer>
+  <p>♥️ممنون که سایت مارا انتخاب کردید♥️</p>
+</footer>
 
 </body>
 </html>
