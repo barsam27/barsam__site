@@ -135,3 +135,31 @@ img.floating-profile {
 .social-links a.telegram:hover {
   transform: scale(1.05);
   }
+
+/* ---------- چرا از ما بخرید ---------- */
+.why-us {
+  margin: 30px auto;
+  max-width: 700px;
+  background: rgba(0,0,0,0.65);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.why-us h2 {
+  color: #00ffcc;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.why-us ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-us li {
+  margin: 12px 0;
+  font-size: 18px;
+  color: #fff;
+}
