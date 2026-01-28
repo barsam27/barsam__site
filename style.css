@@ -182,3 +182,19 @@ img.floating-profile {
   transform: translateY(-8px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
+
+.product-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* موبایل و کلیک */
+.product-card:active {
+  transform: scale(0.97);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* دسکتاپ */
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
