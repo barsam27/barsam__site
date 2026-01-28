@@ -198,3 +198,28 @@ img.floating-profile {
   transform: translateY(-6px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 }
+
+@keyframes softShake {
+  0%   { transform: scale(0.97) translateX(0); }
+  25%  { transform: scale(0.97) translateX(-1px); }
+  50%  { transform: scale(0.97) translateX(1px); }
+  75%  { transform: scale(0.97) translateX(-1px); }
+  100% { transform: scale(0.97) translateX(0); }
+}
+
+.product-card {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* لمس موبایل + کلیک */
+.product-card:active {
+  animation: softShake 0.18s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* دسکتاپ */
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
