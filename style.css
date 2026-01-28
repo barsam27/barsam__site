@@ -163,3 +163,22 @@ img.floating-profile {
   font-size: 18px;
   color: #fff;
 }
+
+/* کارت محصولات */
+.product-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+/* افکت زنده شدن کارت */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
