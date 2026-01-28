@@ -94,3 +94,44 @@ button:hover, .btn:hover {
 img.floating-profile {
   max-width: none;
 }
+
+.social-box {
+  margin: 30px auto;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  background: #111;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+.social-box h2 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.social-links a {
+  display: block;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  transition: 0.3s;
+}
+
+.social-links a.instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366);
+}
+.social-links a.instagram:hover {
+  transform: scale(1.05);
+}
+
+.social-links a.telegram {
+  background: #0088cc;
+}
+.social-links a.telegram:hover {
+  transform: scale(1.05);
+  }
