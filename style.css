@@ -247,3 +247,37 @@ body {
   font-weight: 500;     /* پررنگ‌تر از حالت عادی */
 }
 
+/* ---------- هدر همبرگری ---------- */
+.header-box {
+  background: rgba(0,0,0,0.75);
+  padding: 15px 20px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.hamburger {
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+.dropdown {
+  display: none;
+  margin-top: 10px;
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dropdown a {
+  display: block;
+  padding: 12px 18px;
+  color: white;
+  text-decoration: none;
+  font-family: Tahoma;
+}
+
+.dropdown a:hover {
+  background: #25D366;
+}
