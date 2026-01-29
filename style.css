@@ -296,7 +296,7 @@ body {
 }
 
 .hamburger {
-  font-size: 28px;
+  font-size: 11px;
   cursor: pointer;
   color: white;
   text-decoration: none; /* مهم برای لینک */
@@ -320,7 +320,8 @@ body {
     padding: 10px 12px;
   }
   .hamburger {
-    font-size: 24px;
+    font-size: 11px;
     padding: 8px 12px;
   }
 }
+
