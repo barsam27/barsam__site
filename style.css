@@ -318,3 +318,7 @@ body {
   background-color: rgba(0,0,0,0.9);  /* رنگ پس‌زمینه هنگام hover */
   transform: scale(1.05);  /* بزرگ شدن همبرگر هنگام hover */
 }
+
+body {
+  font-size: 4vw; /* فونت به نسبت عرض صفحه تنظیم می‌شود */
+}
