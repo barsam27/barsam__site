@@ -298,3 +298,23 @@ body {
 .hamburger {
   font-size: 11px;  /* اندازه کوچک‌تر */
   cursor: pointer;
+
+.hamburger {
+  position: fixed;  /* این خط به همبرگر اجازه می‌دهد ثابت بماند */
+  top: 15px;        /* موقعیت همبرگر از بالا */
+  right: 20px;      /* موقعیت همبرگر از سمت راست */
+  font-size: 28px;  /* اندازه فونت همبرگر */
+  background-color: rgba(0,0,0,0.6);  /* رنگ پس‌زمینه */
+  color: white;     /* رنگ متن */
+  padding: 10px 15px;  /* فاصله درون همبرگر */
+  border-radius: 8px;  /* گرد کردن لبه‌ها */
+  cursor: pointer;    /* تغییر شکل موس */
+  z-index: 9999;       /* اطمینان از اینکه روی سایر المان‌ها نمایش داده شود */
+  transition: 0.3s;    /* تغییرات نرم هنگام hover */
+  text-decoration: none;  /* حذف خط زیر متن */
+}
+
+.hamburger:hover {
+  background-color: rgba(0,0,0,0.9);  /* رنگ پس‌زمینه هنگام hover */
+  transform: scale(1.05);  /* بزرگ شدن همبرگر هنگام hover */
+}
