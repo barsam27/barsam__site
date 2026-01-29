@@ -281,3 +281,46 @@ body {
 .dropdown a:hover {
   background: #25D366;
 }
+
+/* ---------- هدر همبرگری (تکمیل و لینک دادن) ---------- */
+.header-box {
+  background: rgba(0,0,0,0.75);
+  padding: 15px 20px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 20px;
+  position: fixed; /* همیشه بالای صفحه */
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.hamburger {
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none; /* مهم برای لینک */
+  display: inline-block;
+  padding: 10px 15px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.hamburger:hover {
+  background: rgba(0,0,0,0.9);
+  transform: scale(1.05);
+}
+
+/* برای موبایل */
+@media (max-width: 600px) {
+  .header-box {
+    top: 10px;
+    right: 10px;
+    padding: 10px 12px;
+  }
+  .hamburger {
+    font-size: 24px;
+    padding: 8px 12px;
+  }
+}
