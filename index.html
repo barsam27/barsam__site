@@ -3,6 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- ---------- تصویر ثابت بالای صفحه ---------- -->
+<div class="header-image">
+  <img src="IMG_20260129_151349.jpg" alt="تصویر بالای صفحه">
+</div>
+
+<style>
+  .header-image {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px; /* فاصله با محتوای بعدی */
+  }
+
+  .header-image img {
+    width: 100%;         /* پر کردن عرض صفحه */
+    max-height: 400px;   /* حداکثر ارتفاع دسکتاپ */
+    object-fit: cover;   /* تصویر پر و بدون کشش */
+    display: block;
+  }
+
+  /* ---------- تنظیمات برای موبایل ---------- */
+  @media (max-width: 768px) {
+    .header-image img {
+      max-height: 250px;  /* ارتفاع کمتر روی موبایل */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header-image img {
+      max-height: 180px;  /* موبایل کوچک */
+    }
+  }
+</style>
   <title>barsam_shabestani.python - HELLO TO THE MY SITE</title>
   <style>
     /* ---------- Reset و فونت ---------- */
@@ -250,6 +282,7 @@
 
 </body>
 </html>
+
 
 
 
