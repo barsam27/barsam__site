@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
@@ -15,18 +15,21 @@
       background: url('14_54_37_large_44af77d7_d306_432e_9224_7cb3e202debe.webp') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
+      font-size: 4vw; /* فونت به نسبت عرض صفحه تنظیم می‌شود */
     }
 
-    * { box-sizing: border-box; font-size: 20px; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     h1, h2, p { margin-bottom: 10px; }
 
     @media (max-width: 768px) {
-      * { font-size: 18px; }
-      h1 { font-size: 24px; }
-      h2 { font-size: 22px; }
-      p { font-size: 18px; }
-      .product-card { font-size: 16px; padding: 10px; }
+      body {
+        font-size: 6vw; /* کاهش اندازه فونت برای موبایل */
+      }
+      h1 { font-size: 5vw; }
+      h2 { font-size: 4.5vw; }
+      p { font-size: 4vw; }
+      .product-card { font-size: 4.5vw; padding: 10px; }
     }
 
     /* ---------- دکمه ---------- */
@@ -203,7 +206,7 @@
   <h2>بازی حدس عدد 🎲</h2>
   <p>حدس عدد از 1 تا 100</p>
   <p>قیمت: 20,000 تومان</p>
-  <a href="contact.html"><button>👉خرید و دریافت👈</button></a>
+  <a href="contact.html"><button>👉خرید و دریافت👈</button></     
 </div>
 
 <div class="product-card">
@@ -248,6 +251,7 @@
 
 </body>
 </html>
+
 
 
 
