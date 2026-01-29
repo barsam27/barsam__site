@@ -124,6 +124,7 @@
       cursor: pointer;
       z-index: 9999;
       transition: 0.3s;
+      text-decoration: none; /* لینک بودن */
     }
     .hamburger:hover {
       background-color: rgba(0,0,0,0.9);
@@ -133,8 +134,8 @@
 </head>
 <body>
 
-<!-- ---------- همبرگر اضافه شده ---------- -->
-<div class="hamburger" onclick="scrollToContact()">☰ ارتباط با ما</div>
+<!-- ---------- همبرگر لینک به صفحه contact.html ---------- -->
+<a href="contact.html" class="hamburger">☰ ارتباط با ما</a>
 
 <h1>barsam_shabestani.python</h1>
 <p>فروش کدهای پایتون</p>
@@ -239,26 +240,10 @@
 <!-- عکس پروفایل شناور -->
 <img src="InShot_20260125_113638831.jpg" class="floating-profile">
 
-<!-- صفحه ارتباط با ما -->
-<div id="contact-page" class="product-card" style="margin-top:50px;">
-  <h2>📞 ارتباط با ما</h2>
-  <p>برای خرید، پشتیبانی و سفارش پروژه:</p>
-  <p><strong>شماره تماس:</strong> 09306662990</p>
-</div>
-
 <footer>
   <h1>barsam_shabestani.python</h1>
   <p>♥️ ممنون که سایت ما را انتخاب کردید ♥️</p>
 </footer>
 
-<script>
-  // ---------- اسکرول به بخش ارتباط با ما ----------
-  function scrollToContact() {
-    const contactSection = document.getElementById('contact-page');
-    contactSection.scrollIntoView({ behavior: 'smooth' });
-  }
-</script>
-
 </body>
 </html>
-
