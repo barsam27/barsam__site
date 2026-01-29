@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="فا">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -111,10 +111,30 @@
       text-align: center;
     }
 
+    /* ---------- همبرگر ---------- */
+    .hamburger {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      background-color: rgba(0,0,0,0.6);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 9999;
+      transition: 0.3s;
+    }
+    .hamburger:hover {
+      background-color: rgba(0,0,0,0.9);
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
 
+<!-- ---------- همبرگر اضافه شده ---------- -->
+<div class="hamburger" onclick="scrollToContact()">☰ ارتباط با ما</div>
 
 <h1>barsam_shabestani.python</h1>
 <p>فروش کدهای پایتون</p>
@@ -126,8 +146,7 @@
     مناسب پروژه دانشگاهی، تمرینی و حتی تجاری.
   </p>
 </div>
-======================
-======================  
+
 <!-- کارت محصولات -->
 <div class="product-card">
   <h2>ماشین حساب پایتون (Tkinter)</h2>
@@ -232,7 +251,13 @@
   <p>♥️ ممنون که سایت ما را انتخاب کردید ♥️</p>
 </footer>
 
+<script>
+  // ---------- اسکرول به بخش ارتباط با ما ----------
+  function scrollToContact() {
+    const contactSection = document.getElementById('contact-page');
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
 </body>
 </html>
-
-
