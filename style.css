@@ -16,6 +16,8 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  font-size: 4vw; /* فونت به نسبت عرض صفحه تنظیم می‌شود */
 }
 
 /* کارت‌ها / باکس‌ها */
@@ -34,6 +36,7 @@ body {
 /* متن‌ها */
 h1, h2, h3, p, span {
   color: white;
+  font-size: 2.5vw; /* تغییر اندازه فونت در عنوان‌ها و متن‌ها */
 }
 
 /* دکمه */
@@ -42,7 +45,7 @@ button, .btn {
   color: black;
   border: none;
   padding: 15px 25px;
-  font-size: 18px;
+  font-size: 2vw; /* تغییر اندازه فونت در دکمه‌ها */
   border-radius: 10px;
   cursor: pointer;
 }
@@ -70,6 +73,7 @@ button:hover, .btn:hover {
 @media (max-width: 600px) {
   body {
     padding: 10px;
+    font-size: 6vw; /* کاهش اندازه فونت برای موبایل */
   }
 
   .card {
@@ -282,43 +286,4 @@ body {
   background: #25D366;
 }
 
-/* ---------- هدر همبرگری (تکمیل و لینک دادن) ---------- */
-.header-box {
-  background: rgba(0,0,0,0.75);
-  padding: 15px 20px;
-  border-radius: 12px;
-  display: inline-block;
-  margin-bottom: 20px;
-  position: fixed; /* همیشه بالای صفحه */
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
-}
-
-.hamburger {
-  font-size: 11px;  /* اندازه کوچک‌تر */
-  cursor: pointer;
-
-.hamburger {
-  position: fixed;  /* این خط به همبرگر اجازه می‌دهد ثابت بماند */
-  top: 15px;        /* موقعیت همبرگر از بالا */
-  right: 20px;      /* موقعیت همبرگر از سمت راست */
-  font-size: 28px;  /* اندازه فونت همبرگر */
-  background-color: rgba(0,0,0,0.6);  /* رنگ پس‌زمینه */
-  color: white;     /* رنگ متن */
-  padding: 10px 15px;  /* فاصله درون همبرگر */
-  border-radius: 8px;  /* گرد کردن لبه‌ها */
-  cursor: pointer;    /* تغییر شکل موس */
-  z-index: 9999;       /* اطمینان از اینکه روی سایر المان‌ها نمایش داده شود */
-  transition: 0.3s;    /* تغییرات نرم هنگام hover */
-  text-decoration: none;  /* حذف خط زیر متن */
-}
-
-.hamburger:hover {
-  background-color: rgba(0,0,0,0.9);  /* رنگ پس‌زمینه هنگام hover */
-  transform: scale(1.05);  /* بزرگ شدن همبرگر هنگام hover */
-}
-
-body {
-  font-size: 4vw; /* فونت به نسبت عرض صفحه تنظیم می‌شود */
-}
+/
