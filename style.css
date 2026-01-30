@@ -287,3 +287,10 @@ body {
 }
 
 /
+
+.hamburger {
+  position: fixed;
+  top: 15px;      /* فاصله از بالای صفحه */
+  right: 15px;    /* گوشه راست */
+  z-index: 9999;  /* روی همه عناصر */
+}
