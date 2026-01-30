@@ -295,9 +295,3 @@ body {
   z-index: 9999;  /* روی همه عناصر */
 }
 
-.section-divider {
-  margin: 50px 0;
-  border: none;
-  height: 2px;
-  background: linear-gradient(to right, #333, #666, #333);
-}
