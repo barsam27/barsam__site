@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>ورود به سایت</title>
+<style>
+body { font-family: Tahoma, sans-serif; padding: 50px; background: #f9f9f9; }
+.container { max-width: 400px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+input, button { width: 100%; padding: 10px; margin-bottom: 10px; }
+button { cursor: pointer; background: #0073e6; color: #fff; border: none; border-radius: 5px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h2>ورود / ثبت نام</h2>
+<input type="email" id="email" placeholder="ایمیل">
+<input type="password" id="password" placeholder="پسورد">
+<button onclick="login()">ورود</button>
+<button onclick="register()">ثبت نام</button>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } 
+from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+
+// اتصال سایت به Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyDxUff3NrphFFpOyCyk06kBTRLswJ7VuLE",
+  authDomain: "barsam-4677.firebaseapp.com",
+  projectId: "barsam-4677",
+  appId: "1:1071690062903:web:0e732a2c359b73c8dbb3b2"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// ثبت نام
+window.register = function() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(() => alert("ثبت نام انجام شد"))
+    .catch(err => alert(err.message));
+}
+
+// ورود
+window.login = function() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      window.location.href = "index.html"; // بعد از ورود، به سایت اصلی میره
+    })
+    .catch(err => alert(err.message));
+}
+</script>
+</body>
+</html>
