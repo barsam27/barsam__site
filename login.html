@@ -46,13 +46,13 @@ button:hover {
 <div class="box">
   <h3>ورود با شماره موبایل</h3>
 
-  <input id="phone" placeholder="+989xxxxxxxxx">
+  <input id="phone" placeholder="مثال: 09306662990">
   <div id="recaptcha-container"></div>
-  <button onclick="sendCode()">ارسال کد</button>
+  <button id="sendBtn">ارسال کد</button>
 
   <div id="codeBox">
-    <input id="code" placeholder="کد پیامک شده">
-    <button onclick="verifyCode()">تایید کد</button>
+    <input id="code" placeholder="کد پیامک">
+    <button id="verifyBtn">تایید کد</button>
   </div>
 </div>
 
@@ -64,7 +64,7 @@ import {
   signInWithPhoneNumber
 } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 
-// 🔹 تنظیمات Firebase
+/* 🔹 Firebase config */
 const firebaseConfig = {
   apiKey: "AIzaSyDxUff3NrphFFpOyCyk06kBTRLswJ7VuLE",
   authDomain: "barsam-4677.firebaseapp.com",
@@ -72,43 +72,47 @@ const firebaseConfig = {
   appId: "1:1071690062903:web:0e732a2c359b73c8dbb3b2"
 };
 
-// 🔹 اتصال
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// 🔹 ساخت reCAPTCHA
+/* 🔹 ساخت reCAPTCHA (باید بعد از لود صفحه باشه) */
 window.recaptchaVerifier = new RecaptchaVerifier(
+  auth,
   'recaptcha-container',
-  { size: 'normal' },
-  auth
+  { size: 'normal' }
 );
+recaptchaVerifier.render();
 
-// 🔹 ارسال کد پیامکی
-window.sendCode = function () {
-  const phone = document.getElementById("phone").value;
+/* 🔹 ارسال کد */
+document.getElementById("sendBtn").onclick = () => {
+  let phone = document.getElementById("phone").value.trim();
+
+  // تبدیل خودکار 09 → +98
+  if (phone.startsWith("0")) {
+    phone = "+98" + phone.substring(1);
+  }
 
   signInWithPhoneNumber(auth, phone, window.recaptchaVerifier)
     .then((confirmationResult) => {
       window.confirmationResult = confirmationResult;
       document.getElementById("codeBox").style.display = "block";
-      alert("کد ارسال شد");
+      alert("کد ارسال شد ✅");
     })
     .catch((error) => {
       alert(error.message);
     });
 };
 
-// 🔹 تایید کد
-window.verifyCode = function () {
+/* 🔹 تایید کد */
+document.getElementById("verifyBtn").onclick = () => {
   const code = document.getElementById("code").value;
 
   window.confirmationResult.confirm(code)
     .then(() => {
-      alert("ورود موفق ✅");
       window.location.href = "index.html";
     })
-    .catch((error) => {
-      alert("کد اشتباه است");
+    .catch(() => {
+      alert("کد اشتباه است ❌");
     });
 };
 </script>
