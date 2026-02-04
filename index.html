@@ -262,51 +262,51 @@
   </div>
 </div>
 
-<!-- ---------- نوار حریم خصوصی کوچک ---------- -->
-<div class="privacy-bar">
-  <div class="marquee-text">
-    سایت ما به حفظ حریم خصوصی کاربران خود متعهد است. اطلاعات جمع‌آوری شده شامل ایمیل و نام کاربر صرفاً برای ارائه خدمات و ارتباط با کاربر استفاده می‌شود. ما اطلاعات کاربران را بدون اجازه آنها در اختیار هیچ شخص یا سازمانی قرار نمی‌دهیم، مگر طبق قوانین لازم یا درخواست مراجع قانونی. استفاده از کوکی‌ها و ابزارهای مشابه برای بهبود تجربه کاربری و تحلیل عملکرد سایت صورت می‌گیرد.
-  </div>
-</div>
-
 <style>
 /* ---------- نوار حریم خصوصی ---------- */
 .privacy-bar {
-  width: 100%;                /* پر کردن عرض صفحه */
-  background-color: #0073e6;  /* رنگ پس‌زمینه */
-  color: #fff;                /* رنگ متن */
-  overflow: hidden;           /* مخفی کردن متن خارج از باکس */
-  white-space: nowrap;        /* یک خط برای متن */
-  padding: 8px 0;             /* ارتفاع کم مثل نوار خبری */
-  position: relative;         /* برای متن متحرک */
-  font-size: 14px;            /* سایز متن */
-  line-height: 1.4;           /* فاصله خطوط */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* سایه کوچک */
+  width: 100%;
+  background-color: #0073e6;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 8px 0;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 /* ---------- متن متحرک ---------- */
 .privacy-bar .marquee-text {
-  display: inline-block; 
-  padding-left: 100%;          /* شروع متن از خارج سمت چپ */
-  animation: marquee 50s linear infinite; /* حرکت آرام */
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 50s linear infinite;
 }
 
-/* ---------- افکت حرکت چپ به راست ---------- */
+/* ---------- افکت حرکت ---------- */
 @keyframes marquee {
-  0%   { transform: translateX(-100%); } /* شروع خارج از صفحه */
-  100% { transform: translateX(100%); }  /* پایان خارج سمت راست */
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ---------- فاصله کارت «چرا از ما بخرید» ---------- */
+.product-card {
+  margin-top: 30px;
 }
 
 /* ---------- ریسپانسیو موبایل ---------- */
 @media (max-width: 480px) {
   .privacy-bar {
-    font-size: 12px;   /* کاهش سایز متن */
-    padding: 6px 0;    /* کاهش ارتفاع */
+    font-size: 12px;
+    padding: 6px 0;
+  }
+
+  .product-card {
+    margin-top: 20px; /* فاصله کمتر در موبایل */
   }
 }
-</style>
-
- 
+   </style>
 
 <!-- کارت چرا از ما بخرید -->
 <div class="product-card">
@@ -332,3 +332,4 @@
 </html>
 ----------------------------------
 ---------
+
