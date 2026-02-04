@@ -286,65 +286,46 @@
 </html>
 ----------------------------------
 ---------
-<!-- ---------- باکس حریم خصوصی متحرک ---------- -->
-<div class="privacy-container">
-  <h1>حریم خصوصی</h1>
+<!-- ---------- نوار حریم خصوصی کوچک ---------- -->
+<div class="privacy-bar">
   <div class="marquee-text">
-    سایت ما به حفظ حریم خصوصی کاربران خود متعهد است. 
-    اطلاعات جمع‌آوری شده شامل ایمیل و نام کاربر صرفاً برای ارائه خدمات و ارتباط با کاربر استفاده می‌شود. 
-    ما اطلاعات کاربران را بدون اجازه آنها در اختیار هیچ شخص یا سازمانی قرار نمی‌دهیم، مگر طبق قوانین لازم یا درخواست مراجع قانونی. 
-    استفاده از کوکی‌ها و ابزارهای مشابه برای بهبود تجربه کاربری و تحلیل عملکرد سایت صورت می‌گیرد. 
-    با استفاده از سایت، شما با جمع‌آوری و استفاده از اطلاعات شخصی خود مطابق با این سیاست حریم خصوصی موافقت می‌کنید. 
-    در صورت تغییر سیاست‌های حریم خصوصی، این صفحه به‌روزرسانی خواهد شد و تاریخ آخرین تغییر در بالای صفحه نمایش داده می‌شود.
+    سایت ما به حفظ حریم خصوصی کاربران خود متعهد است. اطلاعات جمع‌آوری شده شامل ایمیل و نام کاربر صرفاً برای ارائه خدمات و ارتباط با کاربر استفاده می‌شود. ما اطلاعات کاربران را بدون اجازه آنها در اختیار هیچ شخص یا سازمانی قرار نمی‌دهیم، مگر طبق قوانین لازم یا درخواست مراجع قانونی. استفاده از کوکی‌ها و ابزارهای مشابه برای بهبود تجربه کاربری و تحلیل عملکرد سایت صورت می‌گیرد.
   </div>
 </div>
 
 <style>
-/* ---------- استایل کانتینر ---------- */
-.privacy-container {
-  max-width: 400px;
-  margin: 20px auto;
-  background: #fff;
-  color: #333;
-  padding: 15px;
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-  height: 250px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* ---------- تیتر ---------- */
-.privacy-container h1 {
-  color: #0073e6;
-  margin-bottom: 15px;
-  font-size: 18px;
-  text-align: center;
+/* ---------- نوار حریم خصوصی ---------- */
+.privacy-bar {
+  width: 100%;                /* پر کردن عرض صفحه */
+  background-color: #0073e6;  /* رنگ پس‌زمینه */
+  color: #fff;                /* رنگ متن */
+  overflow: hidden;           /* مخفی کردن متن خارج از باکس */
+  white-space: nowrap;        /* یک خط برای متن */
+  padding: 8px 0;             /* ارتفاع کم مثل نوار خبری */
+  position: relative;         /* برای متن متحرک */
+  font-size: 14px;            /* سایز متن */
+  line-height: 1.4;           /* فاصله خطوط */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* سایه کوچک */
 }
 
 /* ---------- متن متحرک ---------- */
-.marquee-text {
-  display: inline-block;
-  white-space: nowrap;
-  animation: marquee 60s linear infinite;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #333;
+.privacy-bar .marquee-text {
+  display: inline-block; 
+  padding-left: 100%;          /* شروع متن از خارج سمت چپ */
+  animation: marquee 50s linear infinite; /* حرکت آرام */
 }
 
 /* ---------- افکت حرکت چپ به راست ---------- */
 @keyframes marquee {
-  0%   { transform: translateX(-100%); } /* شروع از خارج سمت چپ */
-  100% { transform: translateX(100%); }  /* پایان سمت راست */
+  0%   { transform: translateX(-100%); } /* شروع خارج از صفحه */
+  100% { transform: translateX(100%); }  /* پایان خارج سمت راست */
 }
 
 /* ---------- ریسپانسیو موبایل ---------- */
 @media (max-width: 480px) {
-  .privacy-container {
-    height: 180px;
-    padding: 10px;
+  .privacy-bar {
+    font-size: 12px;   /* کاهش سایز متن */
+    padding: 6px 0;    /* کاهش ارتفاع */
   }
-  .privacy-container h1 { font-size: 16px; }
-  .marquee-text { font-size: 12px; line-height: 1.4; }
 }
 </style>
