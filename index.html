@@ -287,9 +287,9 @@
 ----------------------------------
 ---------
 <!-- ---------- باکس حریم خصوصی متحرک ---------- -->
-<div class="privacy-container" style="max-width:400px; margin:20px auto; background:#fff; color:#333; padding:15px; border-radius:8px; overflow:hidden; position:relative; height:250px;">
-  <h1 style="color:#0073e6; margin-bottom:15px; font-size:18px; text-align:center;">حریم خصوصی</h1>
-  <div class="marquee-text" style="display:inline-block; white-space:nowrap; animation:marquee 25s linear infinite; font-size:14px; line-height:1.6; color:#333;">
+<div class="privacy-container">
+  <h1>حریم خصوصی</h1>
+  <div class="marquee-text">
     سایت ما به حفظ حریم خصوصی کاربران خود متعهد است. 
     اطلاعات جمع‌آوری شده شامل ایمیل و نام کاربر صرفاً برای ارائه خدمات و ارتباط با کاربر استفاده می‌شود. 
     ما اطلاعات کاربران را بدون اجازه آنها در اختیار هیچ شخص یا سازمانی قرار نمی‌دهیم، مگر طبق قوانین لازم یا درخواست مراجع قانونی. 
@@ -300,16 +300,51 @@
 </div>
 
 <style>
-/* ---------- حرکت متن ---------- */
+/* ---------- استایل کانتینر ---------- */
+.privacy-container {
+  max-width: 400px;
+  margin: 20px auto;
+  background: #fff;
+  color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  height: 250px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ---------- تیتر ---------- */
+.privacy-container h1 {
+  color: #0073e6;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* ---------- متن متحرک ---------- */
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 60s linear infinite;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ---------- افکت حرکت راست به چپ ---------- */
 @keyframes marquee {
-  0% { transform: translateX(100%); }
+  0%   { transform: translateX(0%); }
   100% { transform: translateX(-100%); }
 }
 
 /* ---------- ریسپانسیو موبایل ---------- */
 @media (max-width: 480px) {
-  .privacy-container { height: 180px; padding:10px; }
-  .marquee-text { font-size:12px; line-height:1.4; }
-  .privacy-container h1 { font-size:16px; }
+  .privacy-container {
+    height: 180px;
+    padding: 10px;
+  }
+  .privacy-container h1 { font-size: 16px; }
+  .marquee-text { font-size: 12px; line-height: 1.4; }
 }
 </style>
