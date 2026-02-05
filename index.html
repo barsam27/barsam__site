@@ -262,50 +262,55 @@
   </div>
 </div>
 
- <style>
+<style>
 /* ---------- نوار حریم خصوصی ---------- */
 .privacy-bar {
-  width: 100%;
-  background-color: #0073e6;
-  color: #fff;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 8px 0;
-  font-size: 14px;
-  line-height: 1.4;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  position: relative;
+  width: 100%;                /* پر کردن عرض صفحه */
+  background-color: #0073e6;  /* رنگ پس‌زمینه */
+  color: #fff;                /* رنگ متن */
+  overflow: hidden;           /* مخفی کردن متن خارج از باکس */
+  white-space: nowrap;        /* یک خط برای متن */
+  padding: 8px 0;             /* ارتفاع کم مثل نوار خبری */
+  position: relative;         /* برای متن متحرک */
+  font-size: 14px;            /* سایز متن */
+  line-height: 1.4;           /* فاصله خطوط */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* سایه کوچک */
 }
 
 /* ---------- متن متحرک ---------- */
 .privacy-bar .marquee-text {
-  display: inline-block;
-  padding-left: 100%;
-  animation: marquee 23s linear infinite; /* 20s حرکت + 3s مکث */
+  display: inline-block;   
+  padding-left: 100%;          
+  animation: marquee 55s linear infinite; /* کل زمان = حرکت + مکث */
 }
 
-/* ---------- افکت حرکت با مکث ---------- */
+/* ---------- افکت حرکت چپ به راست با مکث ---------- */
 @keyframes marquee {
-  0%   { transform: translateX(-100%); }
-  87%  { transform: translateX(100%); }  /* حرکت متن 20s (87% از 23s) */
-  100% { transform: translateX(100%); }  /* مکث 3s */
+  0%   { transform: translateX(-100%); }  /* شروع خارج از صفحه */
+  90%  { transform: translateX(100%); }   /* حرکت تا انتها (90٪ زمان) */
+  100% { transform: translateX(100%); }   /* مکث 10٪ زمان آخر (حدود 5 ثانیه) */
 }
 
 /* ---------- ریسپانسیو موبایل ---------- */
 @media (max-width: 480px) {
   .privacy-bar {
-    font-size: 12px;
-    padding: 6px 0;
+    font-size: 12px;   /* کاهش سایز متن */
+    padding: 6px 0;    /* کاهش ارتفاع */
+  }
+
+  .privacy-bar .marquee-text {
+    animation: marquee 55s linear infinite; /* مکث روی موبایل هم اعمال شود */
   }
 }
 </style>
 
+<!-- ---------- نوار حریم خصوصی ---------- -->
 <div class="privacy-bar">
   <span class="marquee-text">
     🔒 حریم خصوصی شما برای ما بسیار مهم است! ما اطلاعات شخصی شما را جمع‌آوری نمی‌کنیم، مگر آنچه برای ارائه خدمات لازم است. داده‌های شما فقط برای بهبود تجربه کاربری، ارسال اطلاعیه‌ها و ارتقای کیفیت سایت استفاده می‌شوند. ما از کوکی‌ها و ابزارهای مشابه برای تحلیل رفتار کاربران استفاده می‌کنیم، اما هیچ‌گاه اطلاعات شما را با شخص یا شرکت ثالث به اشتراک نمی‌گذاریم. با ادامه مرور سایت، شما استفاده از کوکی‌ها و شرایط حفظ حریم خصوصی ما را قبول می‌کنید. 🌐
   </span>
 </div>
-
+ 
 <!-- کارت چرا از ما بخرید -->
 <div class="product-card">
   <h2>چرا از ما بخرید؟ 🤔</h2>
@@ -331,6 +336,7 @@
 </html>
 ----------------------------------
 ---------
+
 
 
 
