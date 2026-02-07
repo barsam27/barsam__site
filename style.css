@@ -296,14 +296,15 @@ body {
 }
 
 
-/* حالت عادی (تیره یا تصویر زمینه خودت) */
+/* حالت عادی */
 body {
     transition: 0.3s;
 }
 
-/* وقتی لایت مود فعاله: صفحه روشن میشه */
+/* حالت لایت مود */
 body.light {
     background: #ffffff !important;
     color: #000 !important;
-    filter: brightness(1);
+    background-image: none !important;
+    filter: none !important;
 }
