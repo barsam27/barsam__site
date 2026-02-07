@@ -1,162 +1,191 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>barsam_shabestani.python - HELLO TO THE MY SITE</title>
+<!DOCTYPE html>  <html lang="fa">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>barsam_shabestani.python - HELLO TO THE MY SITE</title>    <!-- ---------- تصویر ثابت بالای صفحه ---------- -->    <style>  
+    .header-image {  
+      width: 100%;  
+      text-align: center;  
+      margin-bottom: 20px;  
+    }  
+    .header-image img {  
+      width: 100%;  
+      max-height: 400px;  
+      object-fit: cover;  
+      display: block;  
+    }  
+    @media (max-width: 768px) {  
+      .header-image img { max-height: 250px; }  
+    }  
+    @media (max-width: 480px) {  
+      .header-image img { max-height: 180px; }  
+    }  
+  
+    /* ---------- Reset و فونت ---------- */  
+    html, body { height: 100%; margin: 0; padding: 0; font-family: Arial, sans-serif; }  
+    body { padding: 20px; background: url("InShot_20260201_222332852.jpgjpg") no-repeat center center fixed; background-size: cover; color: #fff; font-size: 4vw; }  
+    * { box-sizing: border-box; margin: 0; padding: 0; }  
+    h1, h2, p { margin-bottom: 10px; }  
+  
+    @media (max-width: 768px) {  
+      body { font-size: 6vw; }  
+      h1 { font-size: 5vw; }  
+      h2 { font-size: 4.5vw; }  
+      p { font-size: 4vw; }  
+      .product-card { font-size: 4.5vw; padding: 10px; }  
+    }  
+  
+    /* ---------- کارت محصولات ---------- */  
+    .product-card {  
+      border: 1px solid #ddd;  
+      padding: 20px;  
+      margin-bottom: 20px;  
+      border-radius: 8px;  
+      background-color: rgba(0,0,0,0.6);  
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);  
+    }  
+  
+    /* ---------- دکمه ---------- */  
+    button {  
+      background-color: #4CAF50;  
+      color: white;  
+      padding: 10px 20px;  
+      border: none;  
+      cursor: pointer;  
+      font-size: 18px;  
+      border-radius: 6px;  
+    }  
+    button:hover { background-color: #45a049; }  
+  
+    /* ---------- فوتر ---------- */  
+    footer { text-align: center; margin-top: 40px; font-size: 18px; }  
+    footer p { font-size: 14px; }  
+  
+    /* ---------- باکس اجتماعی ---------- */  
+    .social-box {  
+      margin: 30px auto;  
+      max-width: 400px;  
+      padding: 20px;  
+      border-radius: 15px;  
+      background: rgba(17,17,17,0.8);  
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);  
+      text-align: center;  
+    }  
+    .social-box h2 { color: #fff; margin-bottom: 15px; font-size: 22px; }  
+    .social-links a {  
+      display: block;  
+      margin: 10px 0;  
+      padding: 12px;  
+      border-radius: 10px;  
+      text-decoration: none;  
+      font-size: 18px;  
+      color: white;  
+      transition: 0.3s;  
+    }  
+    .social-links a.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366); }  
+    .social-links a.instagram:hover { transform: scale(1.05); }  
+    .social-links a.telegram { background: #0088cc; }  
+    .social-links a.telegram:hover { transform: scale(1.05); }  
+  
+    /* ---------- همبرگر ---------- */  
+    .hamburger {  
+      position: fixed;  
+      top: 15px;  
+      right: 20px;  
+      font-size: 11px;  
+      background-color: rgba(0,0,0,0.6);  
+      color: white;  
+      padding: 10px 15px;  
+      border-radius: 8px;  
+      cursor: pointer;  
+      z-index: 9999;  
+      transition: 0.3s;  
+      text-decoration: none;  
+    }  
+    .hamburger:hover { background-color: rgba(0,0,0,0.9); transform: scale(1.05); }  
+  
+    /* ---------- حالت لایت/دارک مود ---------- */  
+    body.light-mode {  
+      background: #ffffff !important;  
+      color: #000 !important;  
+      transition: 0.3s;  
+    }  
+    body.light-mode h1,  
+    body.light-mode h2,  
+    body.light-mode p,  
+    body.light-mode .product-card,  
+    body.light-mode footer,  
+    body.light-mode .social-box h2,  
+    body.light-mode .social-links a {  
+      color: #000 !important;  
+    }  
+    body.light-mode .product-card { background-color: rgba(255,255,255,0.8) !important; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }  
+  
+    body.dark-mode {  
+      background: url("InShot_20260201_222332852.jpgjpg") no-repeat center center fixed;  
+      background-size: cover;  
+      color: white;  
+      transition: 0.5s;  
+    }  
+  
+    /* ---------- دکمه لایت/دارک مستطیلی بالای عنوان ---------- */  
+    #lightToggleContainer {  
+      display:flex;  
+      justify-content:center;  
+      margin-bottom: 15px;  
+    }  
+    #lightToggle {  
+      width: 140px;  
+      height: 40px;  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      font-size: 16px;  
+      font-weight: bold;  
+      background-color: #ffffff;  
+      border: 2px solid #000;  
+      border-radius: 6px;  
+      cursor: pointer;  
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);  
+      transition: 0.3s;  
+    }  
+    #lightToggle:hover { background-color: #f0f0f0; }  
+  </style>  </head>  
+<body>    <!-- ---------- تصویر بالای صفحه ---------- -->    <div class="header-image">  
+    <img src="09_39_55_InShot_20260129_184538410.jpg" alt="تصویر بالای صفحه">  
+  </div>    <!-- ---------- دکمه لایت/دارک مود مستطیلی بالای عنوان ---------- -->    <div id="lightToggleContainer">  
+    <div id="lightToggle">🌞 حالت روشن</div>  
+  </div>    <!-- ---------- عنوان سایت ---------- -->    <h1>barsam_shabestani.python</h1>  
+  <p>فروش کدهای پایتون</p>    <!-- ---------- دکمه لایت/دارک JS ---------- -->    <script>  
+    const toggleBtn = document.getElementById("lightToggle");  
+  
+    // بارگذاری حالت ذخیره‌شده  
+    if(localStorage.getItem("mode") === "light") {  
+      document.body.classList.add("light-mode");  
+      toggleBtn.textContent = "🌙 حالت تاریک";  
+    } else {  
+      document.body.classList.add("dark-mode");  
+      toggleBtn.textContent = "🌞 حالت روشن";  
+    }  
+  
+    toggleBtn.addEventListener("click", () => {  
+      if(document.body.classList.contains("light-mode")) {  
+        document.body.classList.remove("light-mode");  
+        document.body.classList.add("dark-mode");  
+        toggleBtn.textContent = "🌞 حالت روشن";  
+        localStorage.setItem("mode","dark");  
+      } else {  
+        document.body.classList.remove("dark-mode");  
+        document.body.classList.add("light-mode");  
+        toggleBtn.textContent = "🌙 حالت تاریک";  
+        localStorage.setItem("mode","light");  
+      }  
+    });  
+  </script>    <!-- ---------- ادامه محتوای سایت ---------- -->  <a href="contact.html" class="hamburger">☰</a>
 
-  <style>
-    /* ---------- Reset و فونت ---------- */
-    html, body { height: 100%; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-    body { padding: 20px; color: #fff; font-size: 4vw; transition: 0.5s; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    h1, h2, p { margin-bottom: 10px; }
-
-    @media (max-width: 768px) {
-      body { font-size: 6vw; }
-      h1 { font-size: 5vw; }
-      h2 { font-size: 4.5vw; }
-      p { font-size: 4vw; }
-    }
-
-    /* ---------- تصویر بالای صفحه ---------- */
-    .header-image {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .header-image img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      display: block;
-    }
-    @media (max-width: 768px) { .header-image img { max-height: 250px; } }
-    @media (max-width: 480px) { .header-image img { max-height: 180px; } }
-
-    /* ---------- کارت محصولات ---------- */
-    .product-card {
-      border: 1px solid #ddd;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      background-color: rgba(0,0,0,0.6);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-      transition: 0.3s;
-    }
-
-    /* ---------- دکمه لایت/دارک مستطیلی ---------- */
-    #lightToggleContainer {
-      display:flex;
-      justify-content:center;
-      margin-bottom: 15px;
-    }
-    #lightToggle {
-      width: 140px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: bold;
-      background-color: #ffffff;
-      border: 2px solid #000;
-      border-radius: 6px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: 0.3s;
-    }
-    #lightToggle:hover { background-color: #f0f0f0; }
-
-    /* ---------- همبرگر ---------- */
-    .hamburger {
-      position: fixed;
-      top: 15px;
-      right: 20px;
-      font-size: 11px;
-      background-color: rgba(0,0,0,0.6);
-      color: white;
-      padding: 10px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 9999;
-      transition: 0.3s;
-      text-decoration: none;
-    }
-    .hamburger:hover { background-color: rgba(0,0,0,0.9); transform: scale(1.05); }
-
-    /* ---------- حالت لایت/دارک ---------- */
-    body.light-mode {
-      background: #fff;
-      color: #000;
-    }
-    body.light-mode .product-card {
-      background-color: rgba(255,255,255,0.9);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      color: #000;
-    }
-
-    body.dark-mode {
-      background: #000;
-      color: #fff;
-    }
-    body.dark-mode .product-card {
-      background-color: rgba(30,30,30,0.9);
-      color: #fff;
-    }
-
-  </style>
-</head>
-<body>
-
-  <!-- ---------- تصویر بالای صفحه ---------- -->
-  <div class="header-image">
-    <img src="09_39_55_InShot_20260129_184538410.jpg" alt="تصویر بالای صفحه">
-  </div>
-
-  <!-- ---------- دکمه لایت/دارک مستطیلی ---------- -->
-  <div id="lightToggleContainer">
-    <div id="lightToggle">🌞 حالت روشن</div>
-  </div>
-
-  <!-- ---------- عنوان سایت ---------- -->
-  <h1>barsam_shabestani.python</h1>
-  <p>فروش کدهای پایتون</p>
-
-  <!-- ---------- دکمه لایت/دارک JS ---------- -->
-  <script>
-    const toggleBtn = document.getElementById("lightToggle");
-
-    // بارگذاری حالت ذخیره‌شده
-    if(localStorage.getItem("mode") === "light") {
-      document.body.classList.add("light-mode");
-      toggleBtn.textContent = "🌙 حالت تاریک";
-    } else {
-      document.body.classList.add("dark-mode");
-      toggleBtn.textContent = "🌞 حالت روشن";
-    }
-
-    toggleBtn.addEventListener("click", () => {
-      if(document.body.classList.contains("light-mode")) {
-        document.body.classList.remove("light-mode");
-        document.body.classList.add("dark-mode");
-        toggleBtn.textContent = "🌞 حالت روشن";
-        localStorage.setItem("mode","dark");
-      } else {
-        document.body.classList.remove("dark-mode");
-        document.body.classList.add("light-mode");
-        toggleBtn.textContent = "🌙 حالت تاریک";
-        localStorage.setItem("mode","light");
-      }
-    });
-  </script>
-
-  <!-- ---------- ادامه محتوای سایت ---------- -->
-  <a href="contact.html" class="hamburger">☰</a>
-
-  <div class="product-card">
-    <h2>🚀 کدهای آماده برای پروژه‌های واقعی</h2>
-    <p>اینجا می‌تونی سورس‌کدهای تمیز، تست‌شده و قابل توسعه پیدا کنی.</p>
+  <div class="product-card">  
+    <h2>🚀 کدهای آماده برای پروژه‌های واقعی</h2>  
+    <p>اینجا می‌تونی سورس‌کدهای تمیز، تست‌شده و قابل توسعه پیدا کنی.</p>  
   </div>
 
 <!-- کارت محصولات -->
@@ -476,6 +505,7 @@ chatInput.addEventListener('keypress', function(e){
   }
 });
 </script>
+
 
 
 
