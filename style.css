@@ -10,15 +10,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   color: white;
 
-  /* بک‌گراند */
-  background-image: url("InShot_20260126_002137726.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  font-size: 4vw; /* فونت به نسبت عرض صفحه تنظیم می‌شود */
-}
+  
 
 /* کارت‌ها / باکس‌ها */
 .card, .box, .product, .container div {
@@ -332,3 +324,4 @@ body {
     background: #000;
     border-radius: 2px;
 }
+
