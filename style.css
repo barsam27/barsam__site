@@ -296,35 +296,14 @@ body {
 }
 
 
+/* حالت عادی (تیره یا تصویر زمینه خودت) */
 body {
-    background: #fff;
-    color: #000;
     transition: 0.3s;
-    font-family: sans-serif;
 }
 
-body.dark {
-    background: #121212;
-    color: #fff;
-}
-
-/* دکمه ثابت بالا */
-#darkToggle {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    padding: 10px 15px;
-    background: #222;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    z-index: 9999;
-    font-size: 14px;
-}
-
-/* وقتی دارک مود فعاله */
-body.dark #darkToggle {
-    background: #fff;
-    color: #000;
+/* وقتی لایت مود فعاله: صفحه روشن میشه */
+body.light {
+    background: #ffffff !important;
+    color: #000 !important;
+    filter: brightness(1);
 }
