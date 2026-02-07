@@ -3,64 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <!-- ---------- تصویر ثابت بالای صفحه ---------- -->
-<div class="header-image">
-  <img src="09_39_55_InShot_20260129_184538410.jpg" alt="تصویر بالای صفحه">
-</div>
-
-<style>
-  .header-image {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px; /* فاصله با محتوای بعدی */
-  }
-
-  .header-image img {
-    width: 100%;         /* پر کردن عرض صفحه */
-    max-height: 400px;   /* حداکثر ارتفاع دسکتاپ */
-    object-fit: cover;   /* تصویر پر و بدون کشش */
-    display: block;
-  }
-
-  /* ---------- تنظیمات برای موبایل ---------- */
-  @media (max-width: 768px) {
-    .header-image img {
-      max-height: 250px;  /* ارتفاع کمتر روی موبایل */
-    }
-  }
-
-  @media (max-width: 480px) {
-    .header-image img {
-      max-height: 180px;  /* موبایل کوچک */
-    }
-  }
-</style>
   <title>barsam_shabestani.python - HELLO TO THE MY SITE</title>
+
+  <!-- ---------- تصویر ثابت بالای صفحه ---------- -->
   <style>
+    .header-image {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header-image img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .header-image img { max-height: 250px; }
+    }
+    @media (max-width: 480px) {
+      .header-image img { max-height: 180px; }
+    }
+
     /* ---------- Reset و فونت ---------- */
     html, body { height: 100%; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-
-    /* ---------- بک‌گراند ---------- */
-    body {
-      padding: 20px;
-      background: url("InShot_20260201_222332852.jpgjpg") no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-      font-size: 4vw; /* فونت به نسبت عرض صفحه تنظیم می‌شود */
-    }
-
+    body { padding: 20px; background: url("InShot_20260201_222332852.jpgjpg") no-repeat center center fixed; background-size: cover; color: #fff; font-size: 4vw; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     h1, h2, p { margin-bottom: 10px; }
 
     @media (max-width: 768px) {
-      body {
-        font-size: 6vw; /* کاهش اندازه فونت برای موبایل */
-      }
+      body { font-size: 6vw; }
       h1 { font-size: 5vw; }
       h2 { font-size: 4.5vw; }
       p { font-size: 4vw; }
       .product-card { font-size: 4.5vw; padding: 10px; }
+    }
+
+    /* ---------- کارت محصولات ---------- */
+    .product-card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      background-color: rgba(0,0,0,0.6);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     }
 
     /* ---------- دکمه ---------- */
@@ -74,16 +60,6 @@
       border-radius: 6px;
     }
     button:hover { background-color: #45a049; }
-
-    /* ---------- کارت محصولات ---------- */
-    .product-card {
-      border: 1px solid #ddd;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      background-color: rgba(0,0,0,0.6); /* شفافیت روی بک‌گراند */
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-    }
 
     /* ---------- فوتر ---------- */
     footer { text-align: center; margin-top: 40px; font-size: 18px; }
@@ -99,11 +75,7 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.6);
       text-align: center;
     }
-    .social-box h2 {
-      color: #fff;
-      margin-bottom: 15px;
-      font-size: 22px;
-    }
+    .social-box h2 { color: #fff; margin-bottom: 15px; font-size: 22px; }
     .social-links a {
       display: block;
       margin: 10px 0;
@@ -114,23 +86,10 @@
       color: white;
       transition: 0.3s;
     }
-    .social-links a.instagram {
-      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366);
-    }
+    .social-links a.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366); }
     .social-links a.instagram:hover { transform: scale(1.05); }
-    .social-links a.telegram {
-      background: #0088cc;
-    }
+    .social-links a.telegram { background: #0088cc; }
     .social-links a.telegram:hover { transform: scale(1.05); }
-
-    /* ---------- متن هکری ---------- */
-    .glitch {
-      font-family: 'Courier New', Courier, monospace;
-      color: #0f0;
-      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0;
-      margin-top: 40px;
-      text-align: center;
-    }
 
     /* ---------- همبرگر ---------- */
     .hamburger {
@@ -145,145 +104,106 @@
       cursor: pointer;
       z-index: 9999;
       transition: 0.3s;
-      text-decoration: none; /* لینک بودن */
+      text-decoration: none;
     }
-    .hamburger:hover {
-      background-color: rgba(0,0,0,0.9);
-      transform: scale(1.05);
+    .hamburger:hover { background-color: rgba(0,0,0,0.9); transform: scale(1.05); }
+
+    /* ---------- حالت لایت/دارک مود ---------- */
+    body.light-mode {
+      background: #ffffff !important;
+      color: #000 !important;
+      transition: 0.3s;
+    }
+    body.light-mode h1,
+    body.light-mode h2,
+    body.light-mode p,
+    body.light-mode .product-card,
+    body.light-mode footer,
+    body.light-mode .social-box h2,
+    body.light-mode .social-links a {
+      color: #000 !important;
+    }
+    body.light-mode .product-card { background-color: rgba(255,255,255,0.8) !important; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+
+    body.dark-mode {
+      background: url("InShot_20260201_222332852.jpgjpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      transition: 0.5s;
+    }
+
+    /* ---------- دکمه لایت/دارک بالای صفحه ---------- */
+    #lightToggleContainer {
+      display:flex;
+      justify-content:center;
+      margin-bottom: 15px;
+    }
+    #lightToggle {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      background-color: #ffffff;
+      border: 2px solid #000;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body>
 
-<style>
-  /* حالت دارک مود */
-  body.dark-mode {
-    background: url("InShot_20260201_222332852.jpgjpg") no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    transition: background 0.5s, color 0.5s;
-  }
+  <!-- ---------- تصویر بالای صفحه ---------- -->
+  <div class="header-image">
+    <img src="09_39_55_InShot_20260129_184538410.jpg" alt="تصویر بالای صفحه">
+  </div>
 
-  /* حالت لایت مود */
-  body.light-mode {
-    background: white !important;
-    color: black !important;
-    transition: background 0.5s, color 0.5s;
-  }
+  <!-- ---------- دکمه لایت/دارک مود بالای عنوان ---------- -->
+  <div id="lightToggleContainer">
+    <div id="lightToggle">🌞</div>
+  </div>
 
-  /* دکمه لایت/دارک */
-  #lightToggle {
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #333;
-    color: white;
-    border: 2px solid #000;
-    border-radius: 50%;
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    cursor: pointer;
-    z-index: 9999;
-    transition: background 0.5s, color 0.5s;
-  }
-<!-- ---------- باکس لایت مود قبل از body ---------- -->
-<div id="lightToggle" style="
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    background-color: #ffffff;
-    border: 2px solid #000;
-    border-radius: 12px;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    z-index: 9999;
-">🌞</div>
+  <!-- ---------- عنوان سایت ---------- -->
+  <h1>barsam_shabestani.python</h1>
+  <p>فروش کدهای پایتون</p>
 
-<script>
-  const toggleBtn = document.getElementById("lightToggle");
+  <!-- ---------- دکمه لایت/دارک JS ---------- -->
+  <script>
+    const toggleBtn = document.getElementById("lightToggle");
 
-  toggleBtn.addEventListener("click", () => {
-    document.documentElement.classList.toggle("light"); // تغییر روی کل صفحه
-
-    if (document.documentElement.classList.contains("light")) {
+    // بارگذاری حالت ذخیره‌شده
+    if(localStorage.getItem("mode") === "light") {
+      document.body.classList.add("light-mode");
       toggleBtn.textContent = "🌙";
-      localStorage.setItem("mode", "light");
     } else {
+      document.body.classList.add("dark-mode");
       toggleBtn.textContent = "🌞";
-      localStorage.setItem("mode", "normal");
     }
-  });
 
-  // بارگذاری حالت ذخیره‌شده
-  if (localStorage.getItem("mode") === "light") {
-    document.documentElement.classList.add("light");
-    toggleBtn.textContent = "🌙";
-  }
-</script>
+    toggleBtn.addEventListener("click", () => {
+      if(document.body.classList.contains("light-mode")) {
+        document.body.classList.remove("light-mode");
+        document.body.classList.add("dark-mode");
+        toggleBtn.textContent = "🌞";
+        localStorage.setItem("mode","dark");
+      } else {
+        document.body.classList.remove("dark-mode");
+        document.body.classList.add("light-mode");
+        toggleBtn.textContent = "🌙";
+        localStorage.setItem("mode","light");
+      }
+    });
+  </script>
 
-<style>
-  /* ---------- سبک لایت مود ---------- */
-  html.light {
-    background: #ffffff !important;
-    color: #000 !important;
-    background-image: none !important;
-    transition: 0.3s;
-  }
+  <!-- ---------- ادامه محتوای سایت ---------- -->
+  <a href="contact.html" class="hamburger">☰</a>
 
-  html.light h1,
-  html.light h2,
-  html.light p,
-  html.light ul li,
-  html.light footer,
-  html.light .social-box h2,
-  html.light .social-links a {
-    color: #000 !important;
-  }
-
-  html.light .product-card {
-    background-color: rgba(255,255,255,0.8) !important;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    color: #000 !important;
-  }
-
-  html.light .floating-profile {
-    filter: brightness(1) !important;
-  }
-
-  html.light .privacy-bar {
-    background-color: #eee !important;
-    color: #000 !important;
-  }
-
-  html.light .hamburger {
-    background-color: rgba(255,255,255,0.8) !important;
-    color: #000 !important;
-  }
-</style>
-  
-<!-- ---------- همبرگر لینک به صفحه contact.html ---------- -->
-<a href="contact.html" class="hamburger">☰</a>
-
-<h1>barsam_shabestani.python</h1>
-<p>فروش کدهای پایتون</p>
-
-<div class="product-card">
-  <h2>🚀 کدهای آماده برای پروژه‌های واقعی</h2>
-  <p>
-    اینجا می‌تونی سورس‌کدهای تمیز، تست‌شده و قابل توسعه پیدا کنی  
-    مناسب پروژه دانشگاهی، تمرینی و حتی تجاری.
-  </p>
-</div>
+  <div class="product-card">
+    <h2>🚀 کدهای آماده برای پروژه‌های واقعی</h2>
+    <p>اینجا می‌تونی سورس‌کدهای تمیز، تست‌شده و قابل توسعه پیدا کنی.</p>
+  </div>
 
 <!-- کارت محصولات -->
 <div class="product-card">
@@ -602,5 +522,6 @@ chatInput.addEventListener('keypress', function(e){
   }
 });
 </script>
+
 
 
