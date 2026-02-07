@@ -190,52 +190,86 @@
     z-index: 9999;
     transition: background 0.5s, color 0.5s;
   }
-</style>
-
-<div id="lightToggle">🌙</div>
+<!-- ---------- باکس لایت مود قبل از body ---------- -->
+<div id="lightToggle" style="
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    background-color: #ffffff;
+    border: 2px solid #000;
+    border-radius: 12px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 9999;
+">🌞</div>
 
 <script>
-  const body = document.body;
-  const toggle = document.getElementById('lightToggle');
+  const toggleBtn = document.getElementById("lightToggle");
 
-  // تابع تغییر حالت
-  function switchMode() {
-    if(body.classList.contains('dark-mode')){
-      // تغییر به لایت مود
-      body.classList.remove('dark-mode');
-      body.classList.add('light-mode');
-      toggle.textContent = '🌞';
-      toggle.style.background = '#ffeb3b';
-      toggle.style.color = '#000';
-      localStorage.setItem('mode', 'light');
+  toggleBtn.addEventListener("click", () => {
+    document.documentElement.classList.toggle("light"); // تغییر روی کل صفحه
+
+    if (document.documentElement.classList.contains("light")) {
+      toggleBtn.textContent = "🌙";
+      localStorage.setItem("mode", "light");
     } else {
-      // تغییر به دارک مود
-      body.classList.remove('light-mode');
-      body.classList.add('dark-mode');
-      toggle.textContent = '🌙';
-      toggle.style.background = '#333';
-      toggle.style.color = '#fff';
-      localStorage.setItem('mode', 'dark');
+      toggleBtn.textContent = "🌞";
+      localStorage.setItem("mode", "normal");
     }
-  }
+  });
 
-  // بررسی حالت ذخیره شده هنگام بارگذاری صفحه
-  const savedMode = localStorage.getItem('mode');
-  if(savedMode === 'light'){
-    body.classList.add('light-mode');
-    toggle.textContent = '🌞';
-    toggle.style.background = '#ffeb3b';
-    toggle.style.color = '#000';
-  } else {
-    body.classList.add('dark-mode');
-    toggle.textContent = '🌙';
-    toggle.style.background = '#333';
-    toggle.style.color = '#fff';
+  // بارگذاری حالت ذخیره‌شده
+  if (localStorage.getItem("mode") === "light") {
+    document.documentElement.classList.add("light");
+    toggleBtn.textContent = "🌙";
   }
-
-  // رویداد کلیک دکمه
-  toggle.addEventListener('click', switchMode);
 </script>
+
+<style>
+  /* ---------- سبک لایت مود ---------- */
+  html.light {
+    background: #ffffff !important;
+    color: #000 !important;
+    background-image: none !important;
+    transition: 0.3s;
+  }
+
+  html.light h1,
+  html.light h2,
+  html.light p,
+  html.light ul li,
+  html.light footer,
+  html.light .social-box h2,
+  html.light .social-links a {
+    color: #000 !important;
+  }
+
+  html.light .product-card {
+    background-color: rgba(255,255,255,0.8) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    color: #000 !important;
+  }
+
+  html.light .floating-profile {
+    filter: brightness(1) !important;
+  }
+
+  html.light .privacy-bar {
+    background-color: #eee !important;
+    color: #000 !important;
+  }
+
+  html.light .hamburger {
+    background-color: rgba(255,255,255,0.8) !important;
+    color: #000 !important;
+  }
+</style>
   
 <!-- ---------- همبرگر لینک به صفحه contact.html ---------- -->
 <a href="contact.html" class="hamburger">☰</a>
@@ -568,4 +602,5 @@ chatInput.addEventListener('keypress', function(e){
   }
 });
 </script>
+
 
