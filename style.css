@@ -332,11 +332,3 @@ body {
     background: #000;
     border-radius: 2px;
 }
-
-/* حالت لایت مود (صفحه کامل سفید) */
-body.light {
-    background: #ffffff !important;
-    color: #000 !important;
-    background-image: none !important;
-    filter: none !important;
-}
