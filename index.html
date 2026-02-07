@@ -169,13 +169,13 @@
 </head>
 <body>
 
-  <div id="lightToggle" 
+<div id="lightToggle"
      onclick="
        const body=document.body;
        const icon=this;
 
+       // بررسی حالت فعلی و تغییر به حالت مخالف
        if(!body.dataset.mode || body.dataset.mode==='dark'){
-         // سوییچ به حالت لایت
          body.dataset.mode='light';
          body.style.transition='background 0.5s, color 0.5s';
          body.style.background='white';
@@ -184,7 +184,6 @@
          icon.style.background='#ffeb3b';
          icon.style.color='#000';
        } else {
-         // سوییچ به حالت دارک
          body.dataset.mode='dark';
          body.style.transition='background 0.5s, color 0.5s';
          body.style.background='#121212';
@@ -193,11 +192,13 @@
          icon.style.background='#333';
          icon.style.color='#fff';
        }
-     " 
+     "
      style="width:50px;height:50px;font-size:24px;display:flex;align-items:center;justify-content:center;
-            background:#333;color:white;border:2px solid #000;border-radius:50%;position:fixed;
-            bottom:20px;left:20px;cursor:pointer;z-index:9999;
-            transition:background 0.5s,color 0.5s;">🌙</div>
+            background:#333;color:white;border:2px solid #000;border-radius:50%;
+            position:fixed;bottom:20px;left:20px;cursor:pointer;z-index:9999;
+            transition:background 0.5s,color 0.5s;">
+🌙</div>
+  
 <!-- ---------- همبرگر لینک به صفحه contact.html ---------- -->
 <a href="contact.html" class="hamburger">☰</a>
 
@@ -365,5 +366,6 @@
 </html>
 ----------------------------------
 ---------
+
 
 
