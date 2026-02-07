@@ -178,8 +178,9 @@
          // تغییر به حالت لایت
          body.dataset.mode='light';
          body.style.transition='background 0.5s, color 0.5s';
-         body.style.background='white';
+         body.style.background='white'; // صفحه سفید
          body.style.color='black';
+         body.style.backgroundImage='none'; // حذف تصویر
          icon.textContent='🌞';
          icon.style.background='#ffeb3b';
          icon.style.color='#000';
@@ -188,8 +189,12 @@
          // تغییر به حالت دارک
          body.dataset.mode='dark';
          body.style.transition='background 0.5s, color 0.5s';
-         body.style.background='#121212';
+         body.style.background='#121212'; // رنگ تیره برای دارک مود
          body.style.color='white';
+         body.style.backgroundImage='url(\"InShot_20260201_222332852.jpgjpg\")'; // نمایش تصویر
+         body.style.backgroundSize='cover';
+         body.style.backgroundRepeat='no-repeat';
+         body.style.backgroundPosition='center center';
          icon.textContent='🌙';
          icon.style.background='#333';
          icon.style.color='#fff';
@@ -210,18 +215,23 @@
 
   if(savedMode === 'light'){
     body.dataset.mode = 'light';
-    body.style.background = 'white';
-    body.style.color = 'black';
-    icon.textContent = '🌞';
-    icon.style.background = '#ffeb3b';
-    icon.style.color = '#000';
+    body.style.background='white';
+    body.style.color='black';
+    body.style.backgroundImage='none';
+    icon.textContent='🌞';
+    icon.style.background='#ffeb3b';
+    icon.style.color='#000';
   } else {
     body.dataset.mode = 'dark';
-    body.style.background = '#121212';
-    body.style.color = 'white';
-    icon.textContent = '🌙';
-    icon.style.background = '#333';
-    icon.style.color = '#fff';
+    body.style.background='#121212';
+    body.style.color='white';
+    body.style.backgroundImage='url(\"InShot_20260201_222332852.jpgjpg\")';
+    body.style.backgroundSize='cover';
+    body.style.backgroundRepeat='no-repeat';
+    body.style.backgroundPosition='center center';
+    icon.textContent='🌙';
+    icon.style.background='#333';
+    icon.style.color='#fff';
   }
 </script>
   
@@ -392,6 +402,7 @@
 </html>
 ----------------------------------
 ---------
+
 
 
 
