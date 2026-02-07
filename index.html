@@ -177,6 +177,49 @@
         <span></span>
     </div>
 </div>
+
+<div id="lightToggle" style="
+    width: 25px;
+    height: 25px;
+    background: #ffffff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+"></div>
+
+<script>
+    const toggleBtn = document.getElementById("lightToggle");
+
+    // CSS لایت مود
+    const style = document.createElement('style');
+    style.innerHTML = `
+        body.light {
+            background: #ffffff !important;
+            color: #000 !important;
+            background-image: none !important;
+            filter: none !important;
+            transition: 0.3s;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // رویداد کلیک
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light");
+
+        if (document.body.classList.contains("light")) {
+            localStorage.setItem("mode", "light");
+        } else {
+            localStorage.setItem("mode", "normal");
+        }
+    });
+
+    // بارگذاری حالت ذخیره‌شده
+    if (localStorage.getItem("mode") === "light") {
+        document.body.classList.add("light");
+    }
+</script>
  
 <!-- ---------- همبرگر لینک به صفحه contact.html ---------- -->
 <a href="contact.html" class="hamburger">☰</a>
@@ -345,6 +388,7 @@
 </html>
 ----------------------------------
 ---------
+
 
 
 
