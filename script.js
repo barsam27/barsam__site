@@ -18,7 +18,7 @@ toggleBtn.addEventListener("click", () => {
     }
 });
 
-// لود شدن حالت ذخیره‌شده
+// لود شدن حالت قبلی
 if (localStorage.getItem("mode") === "light") {
     document.body.classList.add("light");
 }
