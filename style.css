@@ -296,12 +296,44 @@ body {
 }
 
 
-/* حالت عادی */
-body {
-    transition: 0.3s;
+/* ظرف دکمه‌های بالا */
+#topButtons {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px; /* فاصله بین مربع و همبرگر */
+    z-index: 9999;
 }
 
-/* حالت لایت مود */
+/* مربع لایت مود */
+#lightToggle {
+    width: 25px;
+    height: 25px;
+    background: #ffffff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* دکمه همبرگر */
+#hamburger {
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+#hamburger span {
+    display: block;
+    height: 4px;
+    background: #000;
+    border-radius: 2px;
+}
+
+/* حالت لایت مود (صفحه کامل سفید) */
 body.light {
     background: #ffffff !important;
     color: #000 !important;
