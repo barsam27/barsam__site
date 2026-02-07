@@ -169,70 +169,86 @@
 </head>
 <body>
 
-<div id="lightToggle"
-     onclick="
-       const body=document.body;
-       const icon=this;
+<style>
+  /* حالت دارک مود */
+  body.dark-mode {
+    background: url("InShot_20260201_222332852.jpgjpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    transition: background 0.5s, color 0.5s;
+  }
 
-       if(!body.dataset.mode || body.dataset.mode==='dark'){
-         // تغییر به حالت لایت
-         body.dataset.mode='light';
-         body.style.transition='background 0.5s, color 0.5s';
-         body.style.background='white'; // صفحه سفید
-         body.style.color='black';
-         body.style.backgroundImage='none'; // حذف تصویر
-         icon.textContent='🌞';
-         icon.style.background='#ffeb3b';
-         icon.style.color='#000';
-         localStorage.setItem('mode','light'); // ذخیره حالت
-       } else {
-         // تغییر به حالت دارک
-         body.dataset.mode='dark';
-         body.style.transition='background 0.5s, color 0.5s';
-         body.style.background='#121212'; // رنگ تیره برای دارک مود
-         body.style.color='white';
-         body.style.backgroundImage='url(\"InShot_20260201_222332852.jpgjpg\")'; // نمایش تصویر
-         body.style.backgroundSize='cover';
-         body.style.backgroundRepeat='no-repeat';
-         body.style.backgroundPosition='center center';
-         icon.textContent='🌙';
-         icon.style.background='#333';
-         icon.style.color='#fff';
-         localStorage.setItem('mode','dark'); // ذخیره حالت
-       }
-     "
-     style="width:50px;height:50px;font-size:24px;display:flex;align-items:center;justify-content:center;
-            background:#333;color:white;border:2px solid #000;border-radius:50%;
-            position:fixed;bottom:20px;left:20px;cursor:pointer;z-index:9999;
-            transition:background 0.5s,color 0.5s;">
-🌙</div>
+  /* حالت لایت مود */
+  body.light-mode {
+    background: white !important;
+    color: black !important;
+    transition: background 0.5s, color 0.5s;
+  }
+
+  /* دکمه لایت/دارک */
+  #lightToggle {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333;
+    color: white;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 9999;
+    transition: background 0.5s, color 0.5s;
+  }
+</style>
+
+<div id="lightToggle">🌙</div>
 
 <script>
+  const body = document.body;
+  const toggle = document.getElementById('lightToggle');
+
+  // تابع تغییر حالت
+  function switchMode() {
+    if(body.classList.contains('dark-mode')){
+      // تغییر به لایت مود
+      body.classList.remove('dark-mode');
+      body.classList.add('light-mode');
+      toggle.textContent = '🌞';
+      toggle.style.background = '#ffeb3b';
+      toggle.style.color = '#000';
+      localStorage.setItem('mode', 'light');
+    } else {
+      // تغییر به دارک مود
+      body.classList.remove('light-mode');
+      body.classList.add('dark-mode');
+      toggle.textContent = '🌙';
+      toggle.style.background = '#333';
+      toggle.style.color = '#fff';
+      localStorage.setItem('mode', 'dark');
+    }
+  }
+
   // بررسی حالت ذخیره شده هنگام بارگذاری صفحه
   const savedMode = localStorage.getItem('mode');
-  const body = document.body;
-  const icon = document.getElementById('lightToggle');
-
   if(savedMode === 'light'){
-    body.dataset.mode = 'light';
-    body.style.background='white';
-    body.style.color='black';
-    body.style.backgroundImage='none';
-    icon.textContent='🌞';
-    icon.style.background='#ffeb3b';
-    icon.style.color='#000';
+    body.classList.add('light-mode');
+    toggle.textContent = '🌞';
+    toggle.style.background = '#ffeb3b';
+    toggle.style.color = '#000';
   } else {
-    body.dataset.mode = 'dark';
-    body.style.background='#121212';
-    body.style.color='white';
-    body.style.backgroundImage='url(\"InShot_20260201_222332852.jpgjpg\")';
-    body.style.backgroundSize='cover';
-    body.style.backgroundRepeat='no-repeat';
-    body.style.backgroundPosition='center center';
-    icon.textContent='🌙';
-    icon.style.background='#333';
-    icon.style.color='#fff';
+    body.classList.add('dark-mode');
+    toggle.textContent = '🌙';
+    toggle.style.background = '#333';
+    toggle.style.color = '#fff';
   }
+
+  // رویداد کلیک دکمه
+  toggle.addEventListener('click', switchMode);
 </script>
   
 <!-- ---------- همبرگر لینک به صفحه contact.html ---------- -->
@@ -402,6 +418,7 @@
 </html>
 ----------------------------------
 ---------
+
 
 
 
