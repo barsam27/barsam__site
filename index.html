@@ -519,3 +519,327 @@ chatInput.addEventListener('keypress', function(e){
 
 
 
+
+<title>Snake and Ladder Game</title>
+
+<style>
+
+body{
+    margin:0;
+    background:linear-gradient(135deg,#222,#444);
+    font-family:Tahoma;
+    color:white;
+    text-align:center;
+}
+
+h2{
+    margin:10px;
+}
+
+canvas{
+    background:white;
+    border-radius:15px;
+    box-shadow:0 0 20px black;
+    max-width:95vw;
+}
+
+button,select{
+    padding:10px 20px;
+    font-size:16px;
+    border:none;
+    border-radius:10px;
+    margin:5px;
+    cursor:pointer;
+}
+
+#panel{
+    margin:10px;
+}
+
+#scores{
+    background:rgba(0,0,0,0.6);
+    padding:10px;
+    border-radius:10px;
+    max-width:350px;
+    margin:10px auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>🎲 Snake and Ladder</h2>
+
+<div id="panel">
+
+<select id="playerCount">
+    <option value="2">2 Players</option>
+    <option value="3">3 Players</option>
+    <option value="4">4 Players</option>
+</select>
+
+<button onclick="resetGame()">New Game</button>
+
+</div>
+
+<canvas id="game" width="600" height="600"></canvas>
+
+<div id="info">Player 1 Turn</div>
+
+<button onclick="rollDice()">🎲 Roll Dice</button>
+
+<div id="scores"></div>
+
+
+<script>
+
+// Canvas
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+
+// Images
+const boardImg = new Image();
+boardImg.src = "images.png";
+
+// Sounds
+const diceSound = new Audio("dice.wav");
+const winSound  = new Audio("Victory Sound.mp3");
+
+// Game Data
+const snakes = {
+    97:78,
+    95:56,
+    88:24,
+    62:18
+};
+
+const ladders = {
+    4:25,
+    13:46,
+    33:49,
+    42:63,
+    50:69
+};
+
+let players = [];
+let colors = ["blue","red","green","purple"];
+
+let currentPlayer = 0;
+let gameOver = false;
+let animating = false;
+
+
+// Convert cell to x,y
+function getPosition(cell){
+
+    cell--;
+
+    let row = Math.floor(cell / 10);
+    let col = cell % 10;
+
+    if(row % 2 === 1){
+        col = 9 - col;
+    }
+
+    return{
+        x: col * 60 + 30,
+        y: (9 - row) * 60 + 30
+    };
+}
+
+
+// Draw Game
+function draw(){
+
+    ctx.clearRect(0,0,600,600);
+
+    ctx.drawImage(boardImg,0,0,600,600);
+
+    players.forEach((p,i)=>{
+
+        let pos = getPosition(p.pos);
+
+        ctx.beginPath();
+
+        ctx.arc(pos.x,pos.y,12,0,Math.PI*2);
+
+        ctx.fillStyle = colors[i];
+
+        ctx.fill();
+
+    });
+
+}
+
+
+// Animate Move
+function animateMove(i,start,end){
+
+    animating = true;
+
+    let step = start;
+
+    let interval = setInterval(()=>{
+
+        players[i].pos = step;
+
+        draw();
+
+        if(step === end){
+
+            clearInterval(interval);
+
+            animating = false;
+
+            afterMove(i);
+
+        }
+
+        step += (start < end ? 1 : -1);
+
+    },60);
+
+}
+
+
+// After Move
+function afterMove(i){
+
+    let p = players[i].pos;
+
+    if(ladders[p]){
+        players[i].pos = ladders[p];
+    }
+
+    if(snakes[p]){
+        players[i].pos = snakes[p];
+    }
+
+    if(players[i].pos === 100){
+
+        winSound.play();
+
+        document.getElementById("info").innerText =
+        "🎉 Player " + (i+1) + " Wins!";
+
+        saveScore(i+1);
+
+        gameOver = true;
+
+    }else{
+
+        currentPlayer =
+        (currentPlayer + 1) % players.length;
+
+        document.getElementById("info").innerText =
+        "Player " + (currentPlayer+1) + " Turn";
+    }
+
+    draw();
+}
+
+
+// Roll Dice
+function rollDice(){
+
+    if(gameOver || animating) return;
+
+    diceSound.play();
+
+    let dice = Math.floor(Math.random()*6)+1;
+
+    let p = players[currentPlayer].pos;
+
+    let target =
+    (p + dice <= 100) ? p + dice : p;
+
+    animateMove(currentPlayer,p,target);
+}
+
+
+// Reset Game
+function resetGame(){
+
+    let count =
+    Number(document.getElementById("playerCount").value);
+
+    players = [];
+
+    for(let i=0;i<count;i++){
+
+        players.push({pos:1});
+
+    }
+
+    currentPlayer = 0;
+
+    gameOver = false;
+
+    document.getElementById("info").innerText =
+    "Player 1 Turn";
+
+    draw();
+
+    loadScores();
+}
+
+
+// Save Score
+function saveScore(winner){
+
+    let scores =
+    JSON.parse(localStorage.getItem("scores") || "[]");
+    scores.push({
+        winner:winner,
+        date:new Date().toLocaleString()
+    });
+
+    localStorage.setItem(
+        "scores",
+        JSON.stringify(scores.slice(-5))
+    );
+
+    loadScores();
+}
+
+
+// Load Scores
+function loadScores(){
+
+    let box = document.getElementById("scores");
+
+    let scores =
+    JSON.parse(localStorage.getItem("scores") || "[]");
+
+    box.innerHTML = "<b>Records</b><br>";
+
+    if(scores.length === 0){
+
+        box.innerHTML += "No records yet";
+
+        return;
+    }
+
+    scores.forEach(s=>{
+
+        box.innerHTML +=
+        "🏆 Player " + s.winner +
+        " | " + s.date + "<br>";
+
+    });
+
+}
+
+
+// Start Game
+boardImg.onload = ()=>{
+
+    resetGame();
+
+};
+
+</script>
+
+</body>
+</html>
