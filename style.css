@@ -325,3 +325,8 @@ body {
     border-radius: 2px;
 }
 
+#topImage {
+    width: 100%;
+    filter: brightness(115%) contrast(130%) saturate(150%);
+    transition: 0.3s;
+}
