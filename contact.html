@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>تماس با ما | barsam_shabestani.python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* استایل اختصاصی کارت مربعی */
+        .contact-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
+            margin: 2rem 0;
+        }
+
+        .square-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            width: 340px;
+            height: 340px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .square-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 38px rgba(0, 0, 0, 0.15);
+            border-color: var(--card-hover-border);
+        }
+
+        .square-card p {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .rubika-btn {
+            background: var(--btn-bg);
+            border: none;
+            padding: 0.9rem 2.2rem;
+            border-radius: 3rem;
+            color: var(--btn-text);
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .rubika-btn:hover {
+            background: var(--btn-hover);
+            transform: scale(1.05);
+        }
+
+        .back-link {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .back-link a {
+            color: var(--primary-dark);
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .dark-mode .back-link a {
+            color: #ffbc85;
+        }
+
+        /* واکنش‌گرایی برای موبایل */
+        @media (max-width: 500px) {
+            .square-card {
+                width: 280px;
+                height: 280px;
+            }
+
+            .square-card p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="light-mode">
+    <div class="container">
+        <!-- دکمه تغییر تم (مشابه صفحه اصلی) -->
+        <div class="theme-toggle">
+            <button class="toggle-btn" id="darkModeToggle">
+                <i class="fas fa-moon"></i> <span id="toggleText">حالت تاریک</span>
+            </button>
+        </div>
+
+        <!-- عنوان صفحه -->
+        <div class="main-title">
+            <h1><i class="fas fa-address-card"></i> تماس با ما</h1>
+            <p class="sub">برای خرید محصولات، از طریق روبیکا در ارتباط باشید</p>
+        </div>
+
+        <!-- کارت مربعی اصلی -->
+        <div class="contact-wrapper">
+            <div class="square-card">
+                <p>
+                    <i class="fas fa-shopping-bag"></i><br>
+                    برای خرید بر روی دکمه زیر کلیک کنید
+                </p>
+                <a href="https://rubika.ir/@Soursecode" target="_blank" class="rubika-btn">
+                    <i class="fas fa-link"></i> ارتباط با روبیکا
+                </a>
+            </div>
+        </div>
+
+        <!-- لینک بازگشت -->
+        <div class="back-link">
+            <a href="index.html"><i class="fas fa-arrow-right"></i> بازگشت به فروشگاه</a>
+        </div>
+
+        <!-- فوتر -->
+        <footer>
+            <p>♥️ barsam_shabestani.python – ممنون که ما را انتخاب کردید ♥️</p>
+        </footer>
+    </div>
+
+    <!-- اسکریپت مشترک (چت و تم) -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
